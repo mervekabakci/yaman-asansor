@@ -1,0 +1,296 @@
+/* Customize the label (the container-check) */
+.container-check {
+  .custom-checkbox {
+    display: flex !important;
+    align-items: flex-start;
+    // flex-wrap: wrap;
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    padding-left: 0 !important;
+    .error-message {
+      width: 100%;
+      padding-left: 32px;
+    }
+    .checkText {
+      color: #747474;
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 22px;
+    }
+    a {
+      color: var(--primary-hover);
+      border-bottom: 1px solid rgba(0, 0, 0, 0);
+      transition: all 0.3s linear;
+      @media screen and (min-width: 992px) {
+        &:hover {
+          border-color: var(--primary-hover);
+        }
+      }
+    }
+
+    &.active {
+      .checkmark {
+        background-color: var(--text);
+        &:after {
+          display: block;
+        }
+      }
+    }
+  }
+  a {
+    &.custom-checkbox {
+      @media screen and (min-width: 992px) {
+        &:not(.active) {
+          &:hover {
+            .checkmark {
+              border-color: var(--primary-hover);
+            }
+          }
+        }
+        &:hover {
+          .checkText {
+            color: var(--primary-hover);
+          }
+        }
+      }
+    }
+  }
+
+  /* Hide the browser's default checkbox */
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  /* Create a custom checkbox */
+  .checkmark {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    min-width: 20px;
+    border: 1px solid var(--gray-300);
+    background-color: var(--white);
+    margin-right: 10px;
+    border-radius: 4px;
+    margin-top: 2px;
+  }
+
+  /* On mouse-over, add a grey background color */
+  .custom-checkbox:hover input ~ .checkmark {
+    // background-color: #ccc;
+  }
+
+  /* When the checkbox is checked, add a blue background */
+  input:checked ~ .checkmark {
+    // background-color: #2196F3;
+  }
+
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+  /* Show the checkmark when checked */
+  .custom-checkbox:has(input:checked) .checkmark {
+    background-color: var(--text);
+  }
+  .custom-checkbox:has(input:checked) .checkmark:after {
+    display: block;
+  }
+
+  /* Style the checkmark/indicator */
+  .checkmark:after {
+    left: 7px;
+    top: 4px;
+    width: 5px;
+    height: 10px;
+    border: solid var(--white);
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  &.type2 {
+    .checkText {
+      font-size: 14px;
+      color: var(--primary);
+      font-weight: 600;
+      margin-bottom: 4px;
+      display: inline-flex;
+    }
+    .checkmark {
+      height: 25px;
+      width: 25px;
+      margin-right: 0;
+    }
+  }
+  &.circle {
+    .checkText {
+      font-size: 14px;
+      color: var(--primary);
+      font-weight: 600;
+      margin-bottom: 4px;
+      display: inline-flex;
+    }
+    .checkmark {
+      height: 23px;
+      width: 23px;
+      min-width: 23px;
+      margin-right: 0;
+      border-radius: 100%;
+      border-color: var(--black-700);
+      @media screen and (max-width: 991.98px) {
+        width: 20px;
+        height: 20px;
+        min-width: 20px;
+      }
+      &:after {
+        border: none;
+        width: 100%;
+        height: 100%;
+        background-color: var(--primary);
+        border-radius: 100%;
+        left: 0;
+        top: 0;
+        border: 2px solid var(--white);
+      }
+    }
+    &.custom-checkbox:has(input:checked) .checkmark,
+    &.custom-checkbox:has(input:checked) .checkmark {
+      background-color: rgba(0, 0, 0, 0);
+    }
+  }
+  &.buttonCheck {
+    border: 1px solid var(--gray-2000);
+    min-height: 55px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    @media screen and (max-width: 991.98px) {
+      min-height: 50px;
+    }
+    .custom-checkbox {
+      padding-left: 10px !important;
+      padding-right: 10px;
+      width: 100%;
+      height: 100%;
+      align-items: center;
+
+      .checkmark {
+        width: 20px;
+        min-width: 20px;
+        height: 20px;
+      }
+      .checkText {
+        margin-bottom: 0;
+        font-size: 15px;
+        font-weight: 400;
+        color: var(--black-700);
+        @media screen and (max-width: 1600px) {
+          font-size: 13px;
+        }
+        @media screen and (max-width: 1280px) {
+          font-size: 12px;
+        }
+      }
+    }
+    .checkmark:after {
+      background-color: var(--primary);
+    }
+    &.type2 {
+      .checkmark {
+        display: none;
+      }
+    }
+  }
+  &.customIcon {
+    .checkmark {
+      border-width: 2px;
+      border-color: rgba(0, 0, 0, 0);
+      background-color: rgba(0, 0, 0, 0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 100%;
+      overflow: hidden;
+      padding: 3px;
+      height: 33px;
+      width: 33px;
+      min-width: 33px;
+      transition: all 0.3s linear;
+      img {
+        border-radius: 100%;
+      }
+      &:after {
+        display: none !important;
+      }
+    }
+    .custom-checkbox:has(input:checked) .checkmark {
+      border-color: var(--black-700);
+      background-color: rgba(0, 0, 0, 0);
+    }
+    @media screen and (min-width: 992px) {
+      &:hover {
+        .custom-checkbox:has(input) .checkmark {
+          border-color: var(--black-700);
+          background-color: rgba(0, 0, 0, 0);
+        }
+      }
+    }
+  }
+  &.payment {
+    .custom-checkbox {
+      gap: 10px;
+      .checkText {
+        display: flex;
+        align-items: flex-start;
+        font-size: 12px;
+        font-weight: 400;
+        color: var(--black-700);
+        line-height: 18px;
+        .packetName {
+          font-size: 13px;
+          color: var(--secondary);
+          font-weight: 700;
+          line-height: 20px;
+        }
+        .prodName {
+          font-size: 13px;
+          line-height: 20px;
+          font-weight: 700;
+          // padding-block: 4px;
+          color: var(--black-700);
+          display: flex;
+        }
+        .payment {
+          width: 90px;
+          min-width: 90px;
+          font-size: 15px;
+          font-weight: 700;
+          color: var(--black-700);
+          text-align: right;
+          padding-top: 26px;
+        }
+      }
+    }
+  }
+}
+.container-check.buttonCheck .custom-checkbox:has(input:checked) {
+  border: 1px solid var(--gray-400);
+  background-color: #fcfbf6;
+
+  .checkText {
+    font-weight: 600;
+  }
+}

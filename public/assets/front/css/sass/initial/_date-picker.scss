@@ -1,0 +1,477 @@
+.calendarMobilButton {
+  transition: all 0.3s linear;
+  text-align: center;
+  a {
+    @media screen and (max-width: 991.98px) {
+      max-width: 400px;
+      height: 60px;
+      font-size: 16px;
+      font-weight: 600;
+      width: 100%;
+      margin: 0 auto;
+      &:hover {
+        color: var(--white) !important;
+      }
+    }
+  }
+  &:after {
+    display: none;
+  }
+  &.fixed {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 100%;
+    z-index: 999;
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
+    padding: 20px 16px;
+
+    a {
+      box-shadow: 0 3px 67px rgba(217, 4, 62, 0.8) !important;
+    }
+  }
+}
+.closeCalendarButton {
+  position: absolute;
+  top: 10px;
+  left: 16px;
+  font-size: 34px;
+  color: var(--white);
+  background-color: var(--primary);
+  border-radius: 7px;
+}
+.startEndDateInput {
+  border: none!important;
+  color: var(--text-gray);
+  width: 100%;
+  height: 40px;
+  padding: 0 12px 0 12px;
+  font-size: 12px;
+  border-radius: 4px;
+  border: 1px solid var(--gray-2000)!important;
+}
+.date-picker-wrapper {
+  padding: 95px 0 45px 0;
+  border-radius: 10px;
+  background: var(--white);
+  @media screen and (max-width: 991.98px) {
+    padding-top: 25px;
+  }
+  .month-element {
+    text-transform: capitalize;
+    font-size: 13px;
+    color: var(--text-2);
+    font-weight: 600;
+  }
+  .month-name {
+    font-size: 18px;
+    color: var(--black);
+    font-weight: 500;
+    height: 60px;
+  }
+  .first-date-selected,
+  .last-date-selected {
+    background-color: var(--black) !important;
+    color: var(--white) !important;
+  }
+  table {
+    .day {
+      padding: 0 0;
+      width: 34px;
+      height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10.5px;
+      border-radius: 100%;
+      color: var(--gray-600) !important;
+      font-weight: 500;
+
+      @media screen and (min-width: 992px) {
+        &:hover {
+          background-color: var(--gray-600) !important;
+          color: var(--white) !important;
+        }
+      }
+      &.real-today {
+        background-color: rgba(0, 0, 0, 0) !important;
+        border: 1px solid var(--gray-300) !important;
+        cursor: default;
+      }
+      &.first-date-selected,
+      &.last-date-selected {
+        background-color: var(--black) !important;
+        color: var(--white) !important;
+        &.lastMonth {
+          background-color: var(--gray-300) !important;
+          color: var(--gray-400) !important;
+        }
+      }
+      &.checked {
+        background-color: rgba(242, 5, 92, 0.2) !important;
+        color: var(--gray-700) !important;
+        &.first-date-selected,
+        &.last-date-selected {
+          background-color: var(--primary) !important;
+          color: var(--white) !important;
+          &.lastMonth {
+            background-color: var(--gray) !important;
+            color: var(--gray-400) !important;
+          }
+        }
+        &.lastMonth {
+          background-color: var(--gray-300) !important;
+          color: var(--gray-700) !important;
+        }
+      }
+      &.toMonth {
+        &.hovering {
+          background-color: var(--gray-300) !important;
+        }
+      }
+
+      &.invalid {
+        background-color: var(--gray-300) !important;
+        color: var(--gray-700) !important;
+        &.real-today {
+          background-color: rgba(0, 0, 0, 0) !important;
+          border: 1px solid var(--gray-300) !important;
+        }
+      }
+      &.lastMonth {
+        background-color: var(--gray-300) !important;
+        color: var(--gray-700) !important;
+      }
+    }
+    .week-name {
+      font-size: 16px;
+      height: 45px;
+    }
+    .caption {
+      .next,
+      .prev {
+        font-size: 0;
+        position: relative;
+        width: 24px;
+        height: 24px;
+        display: block;
+        padding: 0;
+        line-height: 24px;
+        &:before {
+          content: "";
+          background-image: url("../../img/statics/icons/arrow-right.svg");
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-position: center;
+          position: absolute;
+          display: block;
+          transition: all 0.3s linear;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+        &:hover {
+          background-color: rgba(0, 0, 0, 0);
+          &:before {
+            filter: invert(34%) sepia(96%) saturate(3850%) hue-rotate(355deg)
+              brightness(95%) contrast(101%);
+          }
+        }
+
+        @media screen and (min-width: 992px) {
+          &:hover {
+            &:before {
+              color: var(--primary);
+            }
+          }
+        }
+      }
+
+      .prev {
+        left: 5px;
+        &:before {
+          transform: rotate(180deg);
+        }
+      }
+      .next {
+        margin-left: auto;
+        right: 5px;
+      }
+    }
+  }
+
+  .date-range-length-tip {
+    background-color: var(--black) !important;
+    color: var(--white) !important;
+    border-radius: 4px;
+    padding: 3px 8px;
+    &:after {
+      border-top-color: var(--black) !important;
+    }
+  }
+  .drp_top-bar {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 90px;
+    left: 0;
+    margin: 0 auto;
+    display: none !important;
+
+    .default-top {
+      display: none;
+    }
+    .apply-btn {
+      top: -30px;
+      padding: 10px 20px !important;
+      right: 0;
+      background-color: var(--black);
+      color: var(--white);
+      border: 1px solid var(--black);
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 10px;
+      transition: all 0.3s linear;
+
+      @media screen and (min-width: 992px) {
+        &:hover {
+          background-color: rgba(0, 0, 0, 0);
+          color: var(--black);
+        }
+      }
+    }
+  }
+  .footer {
+    margin-top: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media screen and (max-width: 991.98px) {
+      text-align: center;
+    }
+    .shortcuts {
+      & > b {
+        display: none !important;
+      }
+    }
+    .next-days {
+      font-weight: 500;
+      font-size: 13px;
+      color: var(--gray-600);
+
+      a {
+        font-weight: 500;
+        font-size: 13px;
+        color: var(--primary);
+        text-decoration: none;
+        display: inline-flex;
+        position: relative;
+        margin-left: 5px;
+        background-color: var(--gray-300);
+        padding: 5px 13px;
+        border-radius: 4px;
+        color: var(--gray-700);
+        transition: all 0.3s linear;
+
+        &:nth-child(1) {
+          margin-left: 23px;
+          &:before {
+            content: "\e903";
+            font-family: "customFont";
+            font-size: 16px;
+            position: absolute;
+            left: -18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray-600);
+          }
+        }
+
+        @media screen and (min-width: 991.98px) {
+          &:hover {
+            background-color: var(--gray-300);
+          }
+        }
+      }
+    }
+    .next-buttons {
+      @media screen and (max-width: 991.98px) {
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+      }
+      a {
+        font-weight: 500;
+        font-size: 13px;
+        color: var(--primary);
+        text-decoration: none;
+        display: inline-flex;
+        position: relative;
+        margin-left: 5px;
+        background-color: var(--gray-300);
+        padding: 5px 13px;
+        border-radius: 4px;
+        color: var(--gray-700);
+        transition: all 0.3s linear;
+        @media screen and (min-width: 991.98px) {
+          &:hover {
+            background-color: var(--gray-300);
+          }
+        }
+      }
+    }
+  }
+  .month-wrapper {
+    width: 100% !important;
+    padding: 0 0;
+    border: none;
+    max-width: 600px;
+    margin: 0 auto;
+    table {
+      width: 250px !important;
+      @media screen and (max-width: 991.98px) {
+        float: none;
+        margin: 0 auto;
+        max-width: 300px;
+        width: 100% !important;
+      }
+      &.month2 {
+        float: right;
+        @media screen and (max-width: 991.98px) {
+          float: none;
+        }
+      }
+      td,
+      th {
+        font-size: 12px;
+        text-transform: capitalize;
+        font-weight: 500;
+        padding: 3px;
+      }
+    }
+  }
+  .gap {
+    @media screen and (max-width: 991.98px) {
+      width: 100%;
+      height: 30px !important;
+      top: 0;
+      float: none;
+      margin: 0 auto;
+    }
+  }
+}
+.dateInputs {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+  gap: 20px;
+  height: 60px;
+
+  @media screen and (max-height: 768px) {
+    height: 45px;
+  }
+  @media screen and (max-width: 1366px) {
+    height: 45px;
+    gap: 10px;
+  }
+  .checkinInput,
+  .checkinInput2 {
+    width: 50%;
+    border-radius: 10px;
+    height: 60px;
+    background-color: var(--gray-300);
+    border: 1px solid var(--gray-300);
+    font-size: 14px;
+    // padding-left: 16px;
+    padding-top: 16px;
+    padding-left: 10px;
+    color: #878787;
+    @media screen and (max-width: 1600px) {
+      font-size: 12px;
+    }
+    @media screen and (max-width: 1366px) {
+      height: 45px;
+    }
+    @media screen and (max-height: 768px) {
+      height: 45px;
+    }
+    &.selected {
+      border-radius: 10px 50px 50px 10px;
+      background-color: var(--black);
+      color: var(--white);
+
+      .name {
+        color: var(--white);
+      }
+    }
+  }
+  .checkoutInput {
+    width: 50%;
+    border-radius: 10px;
+    height: 60px;
+    background-color: var(--gray-300);
+    border: 1px solid var(--gray-300);
+    font-size: 14px;
+    // padding-left: 16px;
+    padding-top: 16px;
+    padding-left: 10px;
+    color: #878787;
+    @media screen and (max-width: 1600px) {
+      font-size: 12px;
+    }
+    @media screen and (max-width: 1366px) {
+      height: 45px;
+    }
+    @media screen and (max-height: 768px) {
+      height: 45px;
+    }
+    &.selected {
+      border-radius: 10px 50px 50px 10px;
+      background-color: var(--black);
+      color: var(--white);
+
+      .name {
+        color: var(--white);
+      }
+    }
+  }
+  .checkInText,
+  .checkOutText,
+  .checkInText2,
+  .checkinInput2 {
+    .name {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      color: var(--text);
+      @media screen and (max-width: 991.98px) {
+        top: 6px;
+      }
+    }
+  }
+}
+
+.dateColumnWrapper {
+  position: relative;
+  width: 380px;
+  margin-left: auto;
+
+  .date-picker-wrapper {
+    position: absolute !important;
+    padding-top: 30px !important;
+    top: 110px !important;
+    box-shadow: 0 12px 17px rgba(39, 54, 86, 0.14),
+      0 5px 22px rgba(39, 54, 86, 0.12);
+    @media screen and (min-width: 992px) {
+      top: 0 !important;
+      width: 700px !important;
+      left: auto !important;
+      right: 0 !important;
+    }
+  }
+}

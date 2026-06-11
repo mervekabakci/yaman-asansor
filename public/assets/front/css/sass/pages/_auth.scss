@@ -1,0 +1,282 @@
+.authWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @media screen and (max-width: 991.98px) {
+    overflow: hidden;
+    overflow-y: auto;
+    display: block;
+    padding: 30px;
+  }
+  .iconImg {
+    width: 16px;
+    height: 16px;
+    top: 35px;
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+  .authHead {
+  }
+  .authTitle {
+    font-size: 20px;
+    color: var(--black);
+    font-weight: 600;
+    text-align: center;
+    @media screen and (max-width:991.98px) {
+      font-size: 16px;
+      line-height: 22px;
+    }
+  }
+  .authText {
+    font-size: 13px;
+    color: var(--gray-700);
+    font-weight: 400;
+    line-height: 20px;
+    text-align: center;
+    padding-top: 5px;
+  }
+  .loginWrap {
+    width: 450px;
+    margin: 0 auto;
+    @media screen and (max-width: 570px) {
+      width: 100%;
+    }
+    .logo {
+      max-width: 300px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 40px;
+      @media screen and (max-width: 991.98px) {
+        margin-bottom: 25px;
+      }
+      img {
+        max-width: 100%;
+      }
+    }
+    .loginFormWrap {
+      background-color: var(--white);
+      // box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      border-radius: 10px;
+      padding: 30px;
+      @media screen and (max-width: 570px) {
+        padding: 10px 0 30px;
+      }
+      .form-label {
+        font-size: 13px;
+        margin-bottom: 2px;
+      }
+      .form-control {
+        height: 36px;
+      }
+      .inputText {
+        font-size: 14px;
+        font-weight: 500;
+      }
+      .inputNote {
+        font-size: 13px;
+        color: var(--gray-700);
+        font-weight: 400;
+        line-height: 17px;
+        margin-top: 5px;
+        display: inline-block;
+      }
+      .formText {
+        font-size: 18px;
+        font-weight: 500;
+        color: var(--text-gray);
+        padding-bottom: 15px;
+      }
+      .inputColumn {
+        margin-bottom: 5px;
+        input {
+          padding-right: 40px;
+        }
+      }
+    }
+  }
+  &:not(.fullscreen) {
+    .bgImg {
+      width: 50%;
+      height: 100%;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        min-width: 100%;
+        min-height: 100%;
+        object-fit: cover;
+        width: auto;
+        height: auto;
+      }
+    }
+
+    .loginWrap {
+      width: 50%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-left: auto;
+      background-color: var(--white);
+      .loginFormWrap {
+        max-width: 400px;
+        width: 100%;
+      }
+    }
+  }
+
+  .forgetme {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    @media screen and (min-width: 992px) {
+      position: relative;
+      transition: all 0.3s linear;
+      &:after {
+        content: "";
+        border-bottom: 1px dotted var(--secondary);
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        transition: all 0.3s linear;
+      }
+      &:hover {
+        color: var(--secondary);
+        &:after {
+          width: 100%;
+        }
+      }
+    }
+  }
+  .signinLink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text);
+    gap: 5px;
+    text-align: center;
+
+    a {
+      font-weight: 500;
+      @media screen and (min-width: 992px) {
+        position: relative;
+        transition: all 0.3s linear;
+        &:after {
+          content: "";
+          border-bottom: 1px dotted var(--secondary);
+          position: absolute;
+          bottom: -2px;
+          left: 0;
+          width: 0;
+          transition: all 0.3s linear;
+        }
+        &:hover {
+          color: var(--secondary);
+          &:after {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+  .paymentCards {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px 0;
+    .paymentCard {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      border: 1px solid var(--gray-2000);
+      border-radius: 10px;
+      padding: 20px 20px;
+      text-align: left;
+      min-height: 150px;
+      .payment {
+        display: flex;
+        align-items: center;
+        color: var(--text);
+        gap: 5px;
+        font-size: 12px;
+        text-align: left;
+        .count {
+          font-size: 24px;
+          font-weight: 600;
+        }
+      }
+      .paymentText {
+        font-size: 13px;
+        color: var(--gray-700);
+        font-weight: 400;
+        line-height: 20px;
+        text-align: left;
+        padding-top: 20px;
+      }
+      .paymentTitle {
+        font-size: 15px;
+        line-height: 25px;
+        font-weight: 600;
+        color: var(--gray-700);
+        margin-bottom: 8px;
+        text-transform: uppercase;
+      }
+    }
+  }
+  .customSelectWrapper {
+    .customSelect {
+      height: 36px;
+      background-color: var(--gray-200);
+      .current {
+        height: 34px;
+        font-weight: 600;
+      }
+    }
+  }
+  .nice-select {
+    .list {
+      .option {
+        min-height: 36px;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 25px;
+        padding: 5px 18px;
+      }
+    }
+  }
+  .resultWrap {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    padding: 30px 0;
+    @media screen and (max-width:576px) {
+      padding: 10px 0;
+      gap:10px;
+    }
+
+    .resultText {
+      font-size: 20px;
+      line-height: 27px;
+      font-weight: 600;
+      text-align: center;
+      @media screen and (max-width: 576px) {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+  }
+}

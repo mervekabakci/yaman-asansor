@@ -1,0 +1,701 @@
+.filterWrapper {
+  // overflow: hidden;
+  .filterButtons {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    & > .container {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+      @media screen and (max-width: 991.98px) {
+        width: 100%;
+      }
+    }
+    &:after {
+      content: "";
+      border-top: 1px solid var(--gray-2000);
+      position: absolute;
+      bottom: -45px;
+      border-radius: 50px;
+      height: 45px;
+      left: 0;
+      right: 0;
+      width: 100%;
+      opacity: 0;
+      transform: translateY(30px);
+      visibility: hidden;
+      overflow: hidden;
+      transition: all 0.3s linear;
+    }
+    .filterChangeModeButton {
+      width: 220px;
+      height: 60px;
+      min-height: 60px;
+      @media screen and (max-width: 1600px) {
+        height: 50px;
+        min-height: 50px;
+      }
+      @media screen and (max-width: 991.98px) {
+        position: fixed;
+        bottom: 2vh;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        z-index: 999;
+        background-color: var(--primary);
+        color: var(black);
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+        width: 250px;
+        height: 60px;
+        &:after {
+          display: none;
+        }
+      }
+      .btn-text {
+        font-weight: 400;
+        font-size: 15px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        width: 160px;
+        @media screen and (max-width: 991.98px) {
+          font-weight: 600;
+        }
+      }
+      .filterCount {
+        background: var(--black);
+        color: var(--white);
+        border-radius: 100%;
+        width: 30px;
+        display: inline-flex;
+        height: 30px;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        margin-left: auto;
+      }
+    }
+  }
+
+  .filterSelectionWrap {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    @media screen and (max-width: 991.98px) {
+      display: block;
+    }
+
+    .filterTags {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding-top: 30px;
+      padding-bottom: 30px;
+      @media screen and (max-width: 991.98px) {
+        padding-top: 20px;
+        padding-bottom: 15px;
+      }
+      .filter-selection {
+        font-size: 14px;
+        color: var(--text);
+        background-color: var(--gray-150);
+        border-radius: 20px;
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        cursor: pointer;
+        @media screen and (max-width: 991.98px) {
+          padding: 4px 10px;
+          font-size: 12px;
+          gap: 10px;
+        }
+
+        .removeTag {
+          font-weight: 600;
+          color: var(--text);
+          width: 24px;
+          height: 24px;
+          font-size: 20px;
+          transition: all 0.3s linear;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          @media screen and (min-width: 992px) {
+            &:hover {
+              color: var(--primary-hover);
+            }
+          }
+        }
+        @media screen and (min-width: 992px) {
+          &:hover {
+            background-color: var(--gray-2000);
+          }
+        }
+      }
+    }
+
+    .clearFilterButton {
+      position: relative;
+      font-size: 13px;
+      @media screen and (max-width: 991.98px) {
+        border-bottom: 1px solid var(--text);
+      }
+      @media screen and (min-width: 992px) {
+        &:after {
+          content: "";
+          width: 100%;
+          border-bottom: 1px solid var(--text);
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          transition: all 0.3s linear;
+        }
+        &:hover {
+          color: var(--primary-hover);
+          &:after {
+            width: 0;
+          }
+        }
+      }
+    }
+  }
+  .filterSelectWrapper {
+    &.select-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      @media screen and (max-width: 991.98px) {
+        width: 100%;
+      }
+      .label {
+        font-size: 15px;
+        color: var(--text);
+      }
+      .customSelect {
+        height: 60px;
+        padding: 0 24px;
+        border-radius: 30px;
+        border: 1px solid #ddd;
+        display: flex;
+        align-items: center;
+        font-weight: 500;
+        transition: 0.35s;
+        position: relative;
+        overflow: hidden;
+        background: transparent !important;
+        z-index: 15;
+        width: 200px;
+        @media screen and (max-width: 1600px) {
+          height: 50px;
+          min-height: 50px;
+        }
+        @media screen and (max-width: 991.98px) {
+          height: 50px;
+          width: 100%;
+          max-width: 400px;
+          margin-top: 20px;
+        }
+        &::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          background: #000;
+          transition: 0.5s cubic-bezier(0.22, 0.9, 0.3, 1);
+          z-index: 1;
+          transform: translateY(120%);
+          border-radius: 50%;
+          width: 200%;
+          height: 250%;
+          left: -50%;
+        }
+        &:after {
+          border-color: var(--text);
+          width: 9px;
+          height: 9px;
+          margin-top: -4.5px;
+          border-color: #111;
+          z-index: 3;
+          right: 20px;
+        }
+        span {
+          position: relative;
+          z-index: 2;
+        }
+        .current {
+          position: relative;
+          z-index: 3;
+          color: var(--black-700);
+        }
+        .list {
+          position: absolute;
+          top: -2px;
+          right: -2px;
+          left: auto;
+          width: 280px;
+          padding: 26px 36px;
+          border-radius: 22px;
+          background: rgba(40, 40, 40, 0.96);
+          backdrop-filter: blur(14px);
+          border: none;
+          display: block;
+          transform-origin: top right;
+          margin-top: 0;
+          max-height: initial;
+          opacity: 0;
+          transform: translateY(10px) scale(0.96);
+          pointer-events: none;
+
+          transition: 0.35s cubic-bezier(0.22, 0.9, 0.3, 1);
+        }
+        .closeSort {
+          transition: all 0.3s linear;
+          @media screen and (min-width: 992px) {
+            &:hover {
+              background-color: var(--primary-hover);
+            }
+          }
+        }
+        .option {
+          color: #fff;
+          padding: 8px 0;
+          border-radius: 0;
+          transition: 0.25s;
+          font-size: 16px;
+          &:not(:first-child) {
+            border-top: 1px solid rgba(255, 255, 255, 0.4);
+          }
+          &.selected {
+            background-color: rgba(0, 0, 0, 0) !important;
+            color: var(--primary-hover) !important;
+          }
+          @media screen and (min-width: 992px) {
+            &:hover {
+              background-color: rgba(0, 0, 0, 0) !important;
+              color: var(--primary-hover) !important;
+            }
+          }
+        }
+        @media screen and (min-width: 992px) {
+          &:hover {
+            color: #fff;
+            border-color: #000;
+            &::before {
+              transform: translateY(-20px);
+            }
+            &:after {
+              border-color: var(--white);
+            }
+            .current {
+              color: var(--white);
+            }
+          }
+        }
+        &.open {
+          overflow: visible !important;
+          z-index: 999;
+          // transform: scale(0.97);
+          &::before {
+            display: none;
+          }
+          .list {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            pointer-events: auto;
+            z-index: 10;
+          }
+        }
+      }
+
+      .sortHeader {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+        color: #fff;
+        font-size: 12px;
+        & > span {
+          opacity: 0.7;
+        }
+      }
+
+      .closeSort {
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        border: none;
+        background: var(--primary);
+        color: var(--black);
+        cursor: pointer;
+      }
+    }
+  }
+  .filterBody {
+    padding-top: 30px;
+    overflow: hidden;
+  }
+  .status-switch {
+    .status-label {
+      font-weight: 600;
+      font-size: 16px;
+      color: var(--text);
+    }
+  }
+  .productCount {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    @media screen and (max-width: 991.98px) {
+      font-weight: 600;
+      font-size: 15px;
+    }
+  }
+  .cards {
+    &.fourth {
+      gap: 80px 30px;
+      @media screen and (max-width: 991.98px) {
+        gap: 50px 16px;
+      }
+      .card {
+        padding: 0;
+        @media screen and (max-width: 1280px) {
+          width: calc(33.3% - 20px);
+        }
+        @media screen and (max-width: 480px) {
+          width: calc(50% - 8px);
+        }
+      }
+    }
+  }
+  .filterListContent {
+    @media screen and (max-width: 991.98px) {
+      padding-bottom: 15vh;
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+  }
+  .accordion {
+    padding-top: 30px;
+    @media screen and (max-width: 1600px) {
+      padding-top: 20px;
+    }
+    @media screen and (max-width: 480px) {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+    details {
+      border-top: 1px solid var(--gray-150);
+      summary {
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--text);
+        padding: 30px 0 30px;
+        @media screen and (max-width: 1600px) {
+          padding: 20px 0 20px;
+          font-size: 16px;
+        }
+        @media screen and (max-width: 991.98px) {
+          padding: 15px 0 15px;
+        }
+        .toggleButton {
+          &.arrow-down-outline {
+            min-width: 14px;
+            top: 12px;
+            &:after,
+            &:before {
+              width: 9px;
+              background-color: var(--text);
+            }
+          }
+        }
+        @media screen and (min-width: 992px) {
+          &:hover {
+            color: var(--primary-hover);
+            .toggleButton {
+              &.arrow-down-outline {
+                &:before,
+                &:after {
+                  background-color: var(--primary-hover);
+                }
+              }
+            }
+          }
+        }
+      }
+      .desc {
+        padding: 0 10px 20px 0;
+        max-height: 240px;
+        overflow-y: auto;
+        border-radius: 0;
+        @media screen and (max-width: 991.98px) {
+          // overflow-y: visible;
+          // max-height: initial;
+        }
+        &::-webkit-scrollbar {
+          width: 4px;
+          border-radius: 6px;
+          background-color: var(--gray-300);
+        }
+        &::-webkit-scrollbar-thumb {
+          border-radius: 6px;
+          width: 4px;
+          background-color: var(--gray-300);
+        }
+        &::-webkit-scrollbar-track {
+          border-radius: 6px;
+          width: 4px;
+          background-color: var(--gray-150);
+        }
+      }
+    }
+    details[open] {
+      summary {
+        // color: var(--primary-hover);
+        .toggleButton {
+          &.arrow-down-outline {
+            &:before,
+            &:after {
+              background-color: var(--text);
+            }
+          }
+        }
+      }
+      .desc {
+        margin-bottom: 40px;
+        @media screen and (max-width: 991.98px) {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+  .filterCol {
+    transition: all 0.3s linear;
+    width: 350px;
+    @media screen and (max-width: 991.98px) {
+      position: fixed;
+      background: var(--white);
+      width: 100%;
+      height: 100vh;
+      top: 0;
+      left: 0;
+      z-index: 9;
+      overflow-y: auto;
+      z-index: 999;
+      transition: all 0.3s linear;
+      margin: 0 auto;
+      padding-top: 30px;
+    }
+    .viewResultFilterButton {
+      position: fixed;
+      bottom: 2vh;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      width: 240px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+      color: var(--black) !important;
+      .countWrap {
+        display: flex;
+        align-items: center;
+        gap: 3px;
+      }
+      .filterCount {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        color: var(--black) !important;
+      }
+    }
+    .filterHeadTitle {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--text);
+      padding-left: 30px;
+      padding-right: 30px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--gray-150);
+      margin-bottom: 20px;
+      @media screen and (min-width: 992px) {
+        display: none;
+      }
+    }
+    .closeFilter {
+      position: absolute;
+      right: 28px;
+      top: 28px;
+      font-weight: 600;
+      color: var(--text);
+      width: 30px;
+      height: 30px;
+      font-size: 24px;
+      transition: all 0.3s linear;
+      z-index: 2;
+    }
+  }
+  .rightCol {
+    padding-left: 8vw;
+    @media screen and (max-width: 1280px) {
+      padding-left: 30px;
+    }
+    @media screen and (max-width: 991.98px) {
+      width: 100%;
+      padding-left: 0;
+    }
+  }
+  .filterList {
+    .container-check {
+      .custom-checkbox {
+        margin-bottom: 10px;
+      }
+    }
+  }
+  .filterHead {
+    &.fixed {
+      .filterButtons {
+        position: fixed;
+        top: 0;
+        background: var(--white);
+        width: 100%;
+        left: 0;
+        right: 0;
+        z-index: 999;
+        // box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+        padding: 30px 0;
+        @media screen and (max-width: 1600px) {
+          padding: 20px 0;
+        }
+        &:after {
+          opacity: 1;
+          transform: translateY(0);
+          visibility: visible;
+          overflow: visible;
+        }
+        .filterChangeModeButton {
+          @media screen and (max-width: 1600px) {
+            height: 45px;
+            min-height: 45px;
+          }
+        }
+        .filterSelectWrapper {
+          &.select-wrapper {
+            .customSelect {
+              @media screen and (max-width: 1600px) {
+                height: 45px;
+                min-height: 45px;
+              }
+            }
+          }
+        }
+      }
+    }
+    &:not(.fixed) {
+      .container {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+  }
+  &.filterHide {
+    .filterCol {
+      right: 100%;
+      opacity: 0;
+      visibility: hidden;
+      overflow: hidden;
+      width: 0;
+      min-width: 0;
+      @media screen and (max-width: 991.98px) {
+        top: 100%;
+        width: 100%;
+      }
+    }
+    .rightCol {
+      padding-left: 0;
+    }
+  }
+}
+
+.filterSearchWrapper {
+  display: flex;
+  align-items: center;
+  padding-bottom: 20px;
+  @media screen and (max-width: 640px) {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .searchWrapper {
+    flex: 1;
+    max-width: 500px;
+    @media screen and (max-width: 640px) {
+      width: 100%;
+      max-width: initial;
+    }
+    .searchInputWrapper {
+      width: 100%;
+      height: 60px;
+      padding: 0 24px 0 50px;
+      border-radius: 30px;
+      border: 1px solid #ddd;
+      display: flex;
+      align-items: center;
+      font-weight: 500;
+      transition: 0.35s;
+      position: relative;
+      overflow: hidden;
+      background: rgba(0, 0, 0, 0) !important;
+      @media screen and (max-width: 991.98px) {
+        height: 45px;
+      }
+      .iconImg {
+        left: 16px;
+        top: 21px;
+        @media screen and (max-width: 991.98px) {
+          top: 14px;
+        }
+      }
+
+      input {
+        border: none;
+        padding: 0;
+        font-weight: 500;
+      }
+    }
+  }
+  .select-wrapper {
+    width: 300px;
+    @media screen and (max-width: 640px) {
+      width: 100%;
+    }
+    label {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--gray-600);
+    }
+    .customSelect {
+      width: 100%;
+      @media screen and (max-width: 991.98px) {
+        height: 45px !important;
+      }
+    }
+  }
+}
+header.fixed ~ main .filterWrapper .filterHead .productCount {
+  @media screen and (max-width: 991.98px) {
+    position: fixed;
+    top: 69px;
+    background: var(--gray-200);
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    padding-left: 20px;
+    padding-right: 20px;
+    min-height: 35px;
+    box-shadow: 0 30px 36px rgba(0, 0, 0, 0.1);
+  }
+}

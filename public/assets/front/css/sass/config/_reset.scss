@@ -1,0 +1,131 @@
+/* Reset CSS */
+
+/* Box Sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Typography */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 1em;
+  font-weight: normal;
+}
+b {
+  font-weight: 600;
+}
+body {
+  font-size: 16px;
+  line-height: 22px;
+  // font-family: "Open Sans", sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
+  // font-family: "Barlow Condensed", sans-serif;
+  font-weight: 400;
+  background-color: #ffffff;
+  scroll-behavior: smooth;
+  min-height: 100vh;
+
+  &::-webkit-scrollbar {
+    background-color: var(--soft-light-pink);
+    border-radius: 4px;
+    width: 8px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--secondary);
+    border-radius: 4px;
+    width: 8px;
+  }
+  &::-webkit-scrollbar-track {
+    border-radius: 4px;
+    background-color: var(--soft-light-pink);
+    width: 8px;
+  }
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Lists */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Forms */
+input,
+button,
+textarea,
+select {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  font-weight: 400;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+
+/* Reset Image */
+img {
+  max-width: 100%;
+  height: auto;
+  overflow: clip;
+  overflow-clip-margin: content-box;
+}
+
+/* Reset Table */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Misc */
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+/* Responsive Embeds */
+embed,
+iframe,
+object,
+video {
+  max-width: 100%;
+}
+
+/* Clear Floats */
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}

@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delta</title>
+    <!-- Açıklama -->
+    <meta name="description" content="Vardiya takip sistemi ile personel çalışma saatlerini planlayın, devamsızlıkları yönetin ve mesai takibini kolaylaştırın. İş gücünüzü dijital olarak kontrol edin.">
+    <!-- Anahtar Kelimeler -->
+    <meta name="keywords" content="vardiya takip, personel yönetimi, mesai planlama, vardiya çizelgesi, çalışan takibi, iş gücü yönetimi">
+    <!-- Sayfa Dili -->
+    <meta name="language" content="tr">
+    <!-- Robots -->
+    <meta name="robots" content="index, follow">
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.vardiyatakip.com/">
+    <!-- Open Graph (Sosyal Paylaşım) -->
+    <meta property="og:title" content="Vardiya Takip Sistemi">
+    <meta property="og:description" content="Personel vardiya planlama ve mesai takibini tek panelden yönetin. İş gücünde tam kontrol.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.vardiyatakip.com/">
+    <meta property="og:image" content="https://www.vardiyatakip.com/assets/images/og-image.jpg">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Vardiya Takip Sistemi">
+    <meta name="twitter:description" content="Mesai planlama ve personel çalışma takibini kolaylaştırın.">
+    <meta name="twitter:image" content="https://www.vardiyatakip.com/assets/images/twitter-card.jpg">
+    <!--SEO end-->
+    <!--favicon set-->
+    <link rel="apple-touch-icon" sizes="57x57" href="public/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="public/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="public/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="public/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="public/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="public/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="public/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="public/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="public/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="public/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="public/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="public/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="public/favicon-16x16.png">
+    <link rel="manifest" href="public/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="public/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="public/assets/plugins/swiper/swiper-bundle.min.css">
+
+    <link rel="stylesheet" href="public/assets/front/css/app.min.css">
+</head>
+<body>
+    <!--preloader-->
+    <div class="preloader" role="status" aria-live="polite">
+        <div class="loader"><span class="d-none">Sayfa Yükleniyor...</span></div>
+    </div>
+    <div class="main">
+        <!--header-->
+        <header class="">
+            <div class="headerTop bg-gray-50">
+                <div class="container">
+                    <div class="rightCol">
+                        <div class="searchShowButton">
+                            <span class="iconImg">
+                                <img src="public/assets/images/statics/icons/search.svg" alt="">
+                            </span>
+                        </div>
+                        <div class="otherLinks">
+                            <a href="#">
+                                <span class="iconImg">
+                                    <img src="public/assets/images/statics/icons/workflow.svg" alt="">
+                                </span>
+                                <span>KARİYER</span>
+                            </a>
+                        </div>
+
+                        <!--Partner hub dropdown-->
+                        <div class="dropdown fixDropdown profileDropdown">
+                            <div class="dropdown-toggle">
+                                <span class="profileIcon">
+                                    <img src="public/assets/images/statics/icons/profile.svg" alt="">
+                                </span>
+                                <span>PARTNER HUB</span>
+                            </div>
+                            <div class="dropdown-menu">
+                                <a href="#" class="dropdown-item">Partner Hub</a>
+                                <a href="#" class="dropdown-item">Partner Hub</a>
+                                <a href="#" class="dropdown-item">Partner Hub</a>
+                            </div>
+                        </div>
+                        <!--language dropdown suanda link olacak sekılde dropdwn gizlenip buton da a tagına cevrılmıstır. 
+                        dropdown olarak kullanılmak ıstenırse buton div tagına donusturulup dropdowndan d-none classı kaldırılacak-->
+                        <div class="dropdown fixDropdown language fixRight">
+                            <a href="#" class="dropdown-toggle">
+                                <span class="iconImg">
+                                    <img src="public/assets/images/statics/icons/tr-flag.svg" alt="">
+                                </span>
+                                <span>TR</span>
+                            </a>
+                            <div class="dropdown-menu d-none">
+                                <a href="#" class="dropdown-item active">
+                                    <span class="iconImg">
+                                        <img src="public/assets/images/statics/icons/tr-flag.svg" alt="">
+                                    </span>
+                                    <span>TR</span>
+                                </a>
+                                <a href="#" class="dropdown-item">
+                                    <span class="iconImg">
+                                        <img src="public/assets/images/statics/icons/tr-flag.svg" alt="">
+                                    </span>
+                                    <span>EN</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="header">
+                    <a href="#" class="logo">
+                        <img src="public/assets/images/statics/logo-dark.png" alt="">
+                    </a>
+                    <nav class="navbar menuWrap">
+                        <div class="nav collapseMenuWrap">
+                            <ul class="menuList">
+                                <li class="menuItem dropdown">
+                                    <button class="menuLink dropdown-menu-link" role="button" aria-haspopup="true" aria-expanded="false" aria-controls="ozelliklerMenu">
+                                        <span>Ürünler</span>
+                                        <span class="iconImg">
+                                            <img class="filter-dark-gray" src="public/assets/images/statics/icons/arrow-right.svg" alt="">
+                                        </span>
+                                    </button>
+                                    <div class="dropdown-menu" id="ozelliklerMenu">
+                                        <div class="container">
+                                            <div class="subMenuList dropdown-content">
+                                                <div class="dropdown-menu-item">
+                                                    <div class="menuTitle">MODÜLLER</div>
+                                                    <ul class="subMenuList dropdown-menu-list">
+                                                        <li><a class="dropdown-menu-link" href="#">VARDİYA</a></li>
+                                                        <li><a class="dropdown-menu-link" href="#">PUANTAJ</a></li>
+                                                        <li><a class="dropdown-menu-link" href="#">PERSONEL</a></li>
+                                                        <li><a class="dropdown-menu-link" href="#">PUANTAJ</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="dropdown-menu-item">
+                                                    <div class="menuTitle">UYGULAMALAR</div>
+                                                    <ul class="subMenuList dropdown-menu-list type2">
+                                                        <li><a class="dropdown-menu-link" href="#">Vardiya Yönetimi</a></li>
+                                                        <li><a class="dropdown-menu-link" href="#">Puantaj Hesaplama</a></li>
+                                                        <li><a class="dropdown-menu-link" href="#">Taşeron Yönetimi</a></li>
+                                                        <li><a class="dropdown-menu-link" href="#">Ödeme Yönetimi</a></li>
+                                                        <li><a class="dropdown-menu-link" href="#">Evrak Yönetimi</a></li>
+                                                        <li><a class="dropdown-menu-link" href="#">Ödeme Yönetimi</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="dropdown-menu-item">
+                                                    <div class="menuTitle">GÜNCEL</div>
+                                                    <div class="dropdown-newsworthy">
+                                                        <a href="#" aria-label="Mertsan Mekanik iş yönetimi" class="item active">
+                                                            <div class="title">Mertsan Mekanik iş yönetimi süreçlerini TriosHap ile takip ediyor </div>
+                                                            <p>Farklı lokasyondaki şantiyeleri için vardiya ve puantaj yönetimini TriosHap ile yapıyor</p>
+                                                            <figure>
+                                                                <!-- <img src="public/assets/img/media/newsworthy/guncel.jpg" alt="Güncel"> -->
+                                                            </figure>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="menuItem dropdown">
+                                    <button class="menuLink dropdown-menu-link" role="button" aria-haspopup="true" aria-expanded="false" aria-controls="sektorlerMenu">
+                                        <span>Sektörler</span>
+                                        <span class="iconImg">
+                                            <img class="filter-dark-gray" src="public/assets/images/statics/icons/arrow-right.svg" alt="">
+                                        </span>
+                                    </button>
+                                    <div class="dropdown-menu" id="sektorlerMenu">
+                                        <div class="container">
+                                            <div class="subMenuList dropdown-content">
+                                                <div class="dropdown-menu-item">
+                                                    <ul class="subMenuList dropdown-menu-list type2">
+                                                        <li><a class="dropdown-menu-link" href="#">Hizmet</a></li>
+                                                        <li><a class="dropdown-menu-link" href="#">Sağlık</a></li>
+                                                        <li><a class="dropdown-menu-link" href="#">İnşaat</a></li>
+                                                        <li><a class="dropdown-menu-link" href="#">Kamu</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="menuItem">
+                                    <a class="menuLink" href="#">Haber & Fuar</a>
+                                </li>
+                                <li class="menuItem">
+                                    <a class="menuLink" href="#">İzler</a>
+                                </li>
+                                <li class="menuItem">
+                                    <a class="menuLink" href="#">Kurumsal</a>
+                                </li>
+                                <li class="menuItem">
+                                    <a class="menuLink" href="#">İletişim</a>
+                                </li>
+                            </ul>
+                            <!-- <div class="d-flex flex-column d-lg-none pt-5">
+                                <a href="#" role="button" class="fixBtn button-secondary mx-auto">Demo Talebi</a>
+                            </div> -->
+                        </div>
+                        <div class="rightWrap d-none d-lg-flex">
+                            <div class="dropdown fixDropdown">
+                                <div class="dropdown-toggle shadow-lg bg-gray-50">
+                                    <span>BÜRO GEREÇLERİ</span>
+                                    <span class="arrow-button text-primary"></span>
+                                </div>
+                                <div class="dropdown-menu">
+                                    <a href="#" class="dropdown-item">Zımba Makineleri</a>
+                                    <a href="#" class="dropdown-item">Delgeçler</a>
+                                    <a href="#" class="dropdown-item">Ataşlar</a>
+                                    <a href="#" class="dropdown-item">Tel Sökücüler</a>
+                                    <a href="#" class="dropdown-item">Mühür Askılıklar</a>
+                                    <a href="#" class="dropdown-item">Takvim Altlıkları</a>
+                                    <a href="#" class="dropdown-item">Masaüstü Setler</a>
+                                    <a href="#" class="dropdown-item">Ahşap Stantlar</a>
+                                    <a href="#" class="dropdown-item">Ofis Tipi Zımba Telleri</a>
+                                    <a href="#" class="dropdown-item">Askılı Ürünler</a>
+                                    <a href="#" class="dropdown-item">Kartelalar</a>
+                                </div>
+                            </div>
+                            <div class="dropdown fixDropdown">
+                                <div class="dropdown-toggle shadow-lg bg-gray-50">
+                                    <span>SANAYİ GEREÇLERİ</span>
+                                    <span class="arrow-button text-secondary"></span>
+                                </div>
+                                <div class="dropdown-menu">
+                                    <a href="#" class="dropdown-item">Havalı Zımba Teli Çakma Makineleri</a>
+                                    <a href="#" class="dropdown-item">Havalı Çivi Teli Çakma Makineleri</a>
+                                    <a href="#" class="dropdown-item">Zımba Telleri</a>
+                                    <a href="#" class="dropdown-item">Çiviler</a>
+                                    <a href="#" class="dropdown-item">El Çakma Makineleri</a>
+                                    <a href="#" class="dropdown-item">Standlar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                    <button class="navbarMenuButton d-lg-none" aria-controls="mainNavigation" aria-expanded="false" aria-label="Menüyü aç/kapat">
+                        <span class="line"></span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+
+
+        <!--main-->
+        <main>
+            <!--Home banner section-->
+            <section>
+                <div class="container">
+                    <div class="homeBanner homeBannerSlide sliderWrapper">
+                        <div class="swiper singleSlide">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="bannerImage">
+                                        <div class="imageWrapper">
+                                            <img src="public/assets/images/media/home-slider/01-1600x650.jpg" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="bannerDesc">
+                                        <div class="bannerTitle">Masanızdaki Düzen, İşinizdeki Güven.</div>
+                                        <p class="col-lg-10">Büro ergonomisini ve zamansız tasarımı bir araya getiren Delta masaüstü gereçleriyle, fikirlerinizi ve belgelerinizi en sağlam formda geleceğe taşıyın.</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="bannerImage">
+                                        <div class="imageWrapper">
+                                            <img src="public/assets/images/media/home-slider/01-1600x650.jpg" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="bannerDesc">
+                                        <div class="bannerTitle">Masanızdaki Düzen, İşinizdeki Güven.</div>
+                                        <p class="col-lg-10">Büro ergonomisini ve zamansız tasarımı bir araya getiren Delta masaüstü gereçleriyle, fikirlerinizi ve belgelerinizi en sağlam formda geleceğe taşıyın.</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="bannerImage">
+                                        <div class="imageWrapper">
+                                            <img src="public/assets/images/media/home-slider/01-1600x650.jpg" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="bannerDesc">
+                                        <div class="bannerTitle">Masanızdaki Düzen, İşinizdeki Güven.</div>
+                                        <p class="col-lg-10">Büro ergonomisini ve zamansız tasarımı bir araya getiren Delta masaüstü gereçleriyle, fikirlerinizi ve belgelerinizi en sağlam formda geleceğe taşıyın.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                      
+                    </div>
+                </div>
+            </section>
+
+            <!--İşin her formunda delta kalıtesı-->
+            <section>
+                <div class="container">
+                    <div class="sectionHead ps-lg-40">
+                        <div class="col-lg-8">
+                            <div class="sectionTitle xl">İşin her formunda Delta kalitesi</div>
+                            <div class="sectionText">Kurumsal süreçlerinizi kolaylaştıran ofis çözümlerinden, endüstriyel gücünüzü destekleyen sanayi ekipmanlarına kadar kusursuz bir ekosistem.</div>
+                        </div>
+                    </div>
+                    <div class="sectionBody">
+                        <div class="sectionContent">
+                            <div class="cards half">
+                                <a href="#" class="card shadow-xl rounded-4 overflow-hidden">
+                                    <div class="card-image-overlay">
+                                        <div class="imageWrapper">
+                                            <img src="public/assets/images/media/products/buro-gerecleri/buro-gerecleri.jpg" alt="">
+                                        </div>
+                                        <div class="desc">
+                                            <div class="card-icon">
+                                                <img class="filter-white" src="public/assets/images/media/icon/office-desk.svg" alt="">
+                                            </div>
+                                            <div class="card-title">BÜRO GEREÇLERİ</div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="#" class="card shadow-xl rounded-4 overflow-hidden">
+                                    <div class="card-image-overlay">
+                                        <div class="imageWrapper">
+                                            <img src="public/assets/images/media/products/sanayi-gerecleri/sanayi-gerecleri.jpg" alt="">
+                                        </div>
+                                        <div class="desc">
+                                            <div class="card-icon">
+                                                <img class="filter-white" src="public/assets/images/media/icon/factory.svg" alt="">
+                                            </div>
+                                            <div class="card-title">SANAYİ GEREÇLERİ</div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--nesiller boyu ... -->
+            <section>
+                <div class="container">
+                    <div class="bg-gray-200 rounded-4 py-lg-18 px-lg-40 py-10 px-10">
+                        <div class="boxes">
+                            <div class="box">
+                                <div class="boxBody col-lg-9">
+                                    <div class="boxTitle">
+                                        Nesiller boyu, işin her formunda ve çalışma alanlarının tam merkezinde.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--Ürün Kategoriler-->
+            <section>
+                <div class="container">
+                    <div class="sectionHead">
+                        <div class="col-lg-8">
+                            <div class="sectionTitle">Ürün Kategorilerini Keşfedin</div>
+                            <div class="sectionText">Geçmişten bugüne neler yaşadık, bizi tanıyın.</div>
+                        </div>
+                    </div>
+                    <div class="sectionBody pt-0">
+                        <div class="sectionContent">
+                            <div class="sliderWrapper">
+                                <div class="slideHead">
+                                    <div class="caption rounded-start-top-2 rounded-start-bottom-2 shadow-lg">Büro Gereçleri</div>
+                                    <div class="slideButtons ms-lg-auto">
+                                        <div class="swiper-button-prev"></div>
+                                        <div class="swiper-button-next"></div>
+                                    </div>
+                                </div>
+                                <div class="swiper quintetteSlider">
+                                    <div class="swiper-wrapper cards">
+                                        <div class="swiper-slide">
+                                            <a href="#" class="card">
+                                                <div class="card-image-top shadow-md border-gray-250-1">
+                                                    <div class="imageWrapper">
+                                                        <img src="public/assets/images/media/products/buro-gerecleri/zimba-makineleri-300x300.jpg" alt="">
+                                                    </div>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="card-title">
+                                                        Zımba Makineleri
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a href="#" class="card">
+                                                <div class="card-image-top shadow-md border-gray-250-1">
+                                                    <div class="imageWrapper">
+                                                        <img src="public/assets/images/media/products/buro-gerecleri/delgecler-300x300.jpg" alt="">
+                                                    </div>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="card-title">
+                                                        Delgeçler
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a href="#" class="card">
+                                                <div class="card-image-top shadow-md border-gray-250-1">
+                                                    <div class="imageWrapper">
+                                                        <img src="public/assets/images/media/products/buro-gerecleri/ataslar-300x300.jpg" alt="">
+                                                    </div>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="card-title">
+                                                        Ataşlar
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a href="#" class="card">
+                                                <div class="card-image-top shadow-md border-gray-250-1">
+                                                    <div class="imageWrapper">
+                                                        <img src="public/assets/images/media/products/buro-gerecleri/tek-sokuculer-300x300.jpg" alt="">
+                                                    </div>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="card-title">
+                                                        Tel Sökücüler
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a href="#" class="card">
+                                                <div class="card-image-top shadow-md border-gray-250-1">
+                                                    <div class="imageWrapper">
+                                                        <img src="public/assets/images/media/products/buro-gerecleri/muhur-askiliklar-300x300.jpg" alt="">
+                                                    </div>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="card-title">
+                                                        Mühür Askılıklar
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a href="#" class="card">
+                                                <div class="card-image-top shadow-md border-gray-250-1">
+                                                    <div class="imageWrapper">
+                                                        <!-- <img src="public/assets/images/media/products/buro-gerecleri/muhur-askiliklar-300x300.jpg" alt=""> -->
+                                                    </div>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="card-title">
+                                                        El Çakma Makineleri
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#" class="button button-secondary-outline border-gray-200-1 mt-5">
+                                <span class="iconImg">
+                                    <img src="public/assets/images/statics/icons/arrow-right-long.svg" alt="">
+                                </span>
+                                <span>Tüm Büro Gereçleri Kategorileri</span>
+                            </a>
+                        </div>
+                        <div class="sectionContent">
+                            <div class="sliderWrapper">
+                                <div class="slideHead">
+                                    <div class="caption rounded-start-top-2 rounded-start-bottom-2 shadow-lg">Sanayi Gereçleri</div>
+                                    <div class="slideButtons ms-lg-auto">
+                                        <div class="swiper-button-prev"></div>
+                                        <div class="swiper-button-next"></div>
+                                    </div>
+                                </div>
+                                <div class="swiper quintetteSlider">
+                                    <div class="swiper-wrapper cards">
+                                        <div class="swiper-slide">
+                                            <a href="#" class="card">
+                                                <div class="card-image-top shadow-md border-gray-250-1">
+                                                    <div class="imageWrapper">
+                                                        <img class="containImg" src="public/assets/images/media/products/sanayi-gerecleri/havali-zimba-cakma.jpg" alt="">
+                                                    </div>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="card-title">
+                                                        Havalı Zımba Teli Çakma Makineleri
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a href="#" class="card">
+                                                <div class="card-image-top shadow-md border-gray-250-1">
+                                                    <div class="imageWrapper">
+                                                        <img class="containImg" src="public/assets/images/media/products/sanayi-gerecleri/havali-civi-teli-cakma.jpg" alt="">
+                                                    </div>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="card-title">
+                                                        Havalı Çivi Teli Çakma Makineleri
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a href="#" class="card">
+                                                <div class="card-image-top shadow-md border-gray-250-1">
+                                                    <div class="imageWrapper">
+                                                        <img class="containImg" src="public/assets/images/media/products/sanayi-gerecleri/zimba-teli.jpg" alt="">
+                                                    </div>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="card-title">
+                                                        Zımba Telleri
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a href="#" class="card">
+                                                <div class="card-image-top shadow-md border-gray-250-1">
+                                                    <div class="imageWrapper">
+                                                        <img class="containImg" src="public/assets/images/media/products/sanayi-gerecleri/civiler.jpg" alt="">
+                                                    </div>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="card-title">
+                                                        Çiviler
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a href="#" class="card">
+                                                <div class="card-image-top shadow-md border-gray-250-1">
+                                                    <div class="imageWrapper">
+                                                        <!-- <img src="public/assets/images/media/products/buro-gerecleri/muhur-askiliklar-300x300.jpg" alt=""> -->
+                                                    </div>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="card-title">
+                                                        El Çakma Makineleri
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a href="#" class="card">
+                                                <div class="card-image-top shadow-md border-gray-250-1">
+                                                    <div class="imageWrapper">
+                                                        <!-- <img src="public/assets/images/media/products/buro-gerecleri/muhur-askiliklar-300x300.jpg" alt=""> -->
+                                                    </div>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="card-title">
+                                                        El Çakma Makineleri
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#" class="button button-secondary-outline border-gray-200-1 mt-5">
+                                <span class="iconImg">
+                                    <img src="public/assets/images/statics/icons/arrow-right-long.svg" alt="">
+                                </span>
+                                <span>Tüm Sanayi Gereçleri Kategorileri</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--Sektörünüze özel delta gücü-->
+            <section>
+                <div class="container">
+                    <div class="sectionHead">
+                        <div class="col-lg-8">
+                            <div class="sectionTitle">Sektörünüze Özel Delta Gücü</div>
+                            <div class="sectionText">Kurumsal çözümlerimizi keşfedin</div>
+                        </div>
+                    </div>
+                    <div class="sectionBody pt-0">
+                        <div class="sectionContent">
+                            <div class="bg-gray-200 rounded-3 border-gray-200-1 p-8">
+                                <div class="cards quintet iconCards">
+                                    <a href="#" class="card shadow-lg">
+                                        <div class="iconWrapper">
+                                            <div class="imageWrapper">
+                                                <img src="public/assets/images/media/icon/mobilya-ic-mekan-h-100.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="icon-title">
+                                            Mobilya & iç Mekan Üretimi
+                                        </div>
+                                        <span class="iconImg">
+                                            <img src="public/assets/images/statics/icons/arrow-right-long.svg" class="filter-secondary" alt="">
+                                        </span>
+                                    </a>
+                                    <a href="#" class="card shadow-lg">
+                                        <div class="iconWrapper">
+                                            <div class="imageWrapper">
+                                                <img src="public/assets/images/media/icon/ahsap-marangozluk-h-100.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="icon-title">
+                                            Ahşap & Marangozluk Uygulamaları
+                                        </div>
+                                        <span class="iconImg">
+                                            <img src="public/assets/images/statics/icons/arrow-right-long.svg" class="filter-secondary" alt="">
+                                        </span>
+                                    </a>
+                                    <a href="#" class="card shadow-lg">
+                                        <div class="iconWrapper">
+                                            <div class="imageWrapper">
+                                                <img src="public/assets/images/media/icon/kapi-pencere-h-100.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="icon-title">
+                                            Kapı, Pencere & Yapı Sistemleri
+                                        </div>
+                                        <span class="iconImg">
+                                            <img src="public/assets/images/statics/icons/arrow-right-long.svg" class="filter-secondary" alt="">
+                                        </span>
+                                    </a>
+                                    <a href="#" class="card shadow-lg">
+                                        <div class="iconWrapper">
+                                            <div class="imageWrapper">
+                                                <img src="public/assets/images/media/icon/doseme-oturma-h-100.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="icon-title">
+                                            Döşeme & Oturma Grubu Üretimi
+                                        </div>
+                                        <span class="iconImg">
+                                            <img src="public/assets/images/statics/icons/arrow-right-long.svg" class="filter-secondary" alt="">
+                                        </span>
+                                    </a>
+                                    <a href="#" class="card shadow-lg">
+                                        <div class="iconWrapper">
+                                            <div class="imageWrapper">
+                                                <img src="public/assets/images/media/icon/endustriyel-ambalaj-h-100.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="icon-title">
+                                            Endüstriyel Ambalaj & Üretim
+                                        </div>
+                                        <span class="iconImg">
+                                            <img src="public/assets/images/statics/icons/arrow-right-long.svg" class="filter-secondary" alt="">
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--Deltadan izler-->
+            <section>
+                <div class="container">
+                    <div class="sectionHead">
+                        <div class="col-lg-8">
+                            <div class="sectionTitle">
+                                Delta'dan İzler
+                            </div>
+                            <div class="sectionText">
+                                Geçmişten bugüne neler yaşadık, bizi tanıyın.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sectionBody">
+                        <div class="sectionContent">
+                            <div class="bg-gray-200 rounded-4 p-15">
+                                <div class="boxes">
+                                    <a href="#" class="box half shadow-lg rounded-4 overflow-hidden">
+                                        <div class="box-image-overlay">
+                                            <div class="imageWrapper">
+                                                <img src="public/assets/images/media/deltadan-izler/30-yil-720x420.jpg" alt="">
+                                            </div>
+                                            <div class="desc">
+                                                <div class="textLink">
+                                                    <span>Hikayeyi Keşfet</span>
+                                                    <span class="iconImg">
+                                                        <img src="public/assets/images/statics/icons/arrow-right-long.svg" alt="">
+                                                    </span>
+                                                </div>
+                                                <div class="boxTitle col-lg-7 flex-none">30 yıl boyunca aynı masada çalıştı.</div>
+                                                <p class="col-lg-9 flex-none">Yıllar sonra servis için geri geldi. Hala çalışıyordu.</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="box half shadow-lg rounded-4 overflow-hidden">
+                                        <div class="box-image-overlay">
+                                            <div class="imageWrapper">
+                                                <img src="public/assets/images/media/deltadan-izler/masa-degisti-720x420.jpg" alt="">
+                                            </div>
+                                            <div class="desc">
+                                                <div class="textLink">
+                                                    <span>Geçmişe Göz At</span>
+                                                    <span class="iconImg">
+                                                        <img src="public/assets/images/statics/icons/arrow-right-long.svg" alt="">
+                                                    </span>
+                                                </div>
+                                                <div class="boxTitle col-lg-7 flex-none">Masa Değişti. İş değişti. Delta hep oradaydı.</div>
+                                                <p class="col-lg-9 flex-none">Nesiller boyunca çalışma alanlarının sessiz bir parçası oldu.</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="box trio shadow-lg rounded-3 overflow-hidden">
+                                        <div class="box-image-overlay">
+                                            <div class="imageWrapper">
+                                                <img src="public/assets/images/media/deltadan-izler/delta-arsivi-720x420.jpg" alt="">
+                                            </div>
+                                            <div class="desc">
+                                                <div class="boxTitle">Delta Arşivi</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="box trio shadow-lg rounded-3 overflow-hidden">
+                                        <div class="box-image-overlay">
+                                            <div class="imageWrapper">
+                                                <img src="public/assets/images/media/deltadan-izler/fuar-hafizasi-720x420.jpg" alt="">
+                                            </div>
+                                            <div class="desc">
+                                                <div class="boxTitle">Fuar Hafızası</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="box trio shadow-lg rounded-3 overflow-hidden">
+                                        <div class="box-image-overlay">
+                                            <div class="imageWrapper">
+                                                <img src="public/assets/images/media/deltadan-izler/uretimden-izler-720x420.jpg" alt="">
+                                            </div>
+                                            <div class="desc">
+                                                <div class="boxTitle">Üretimden İzler</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--Haber ve Fuar-->
+            <section>
+                <div class="container">
+                    <div class="sectionHead">
+                        <div class="col-lg-8">
+                            <div class="sectionTitle">Haber & Fuar</div>
+                            <div class="sectionText">
+                                Yeni ürün ve arge faaliyetleri, fuarlarımızı takip edin.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sectionBody">
+                        <div class="sectionContent">
+                            <div class="cards triple">
+                                <a href="#" class="card">
+                                    <div class="card-image-top type2 shadow-lg rounded-2 bg-gray-200">
+                                        <div class="imageWrapper">
+                                            <img src="public/assets/images/media/news/yeni-urun-zimba-500x400.jpg" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="card-title">
+                                            Yeni ürünümüz 24/6  Standart Zımba 
+                                        </div>
+                                        <div class="card-text">
+                                            Kullanıcı beklentilerini karşılamaya devam ediyoruz. Bu ürünümüz ile birlikte makineye tel takmak artık çok kolay
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="#" class="card">
+                                    <div class="card-image-top type2 shadow-lg rounded-2 bg-gray-200">
+                                        <div class="imageWrapper">
+                                            <img src="public/assets/images/media/news/win-eurasia-500x400.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="card-title">
+                                            Win Eurasia 2027 fuarına katılıyoruz.
+                                        </div>
+                                        <div class="card-text">
+                                            Almanya’nın Düsseldorf şehrine düzenlenen Win Euarais fuarına katılıyoruz. 32 Hall Stand 20’de sizi bekliyor olacağız.
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="#" class="card">
+                                    <div class="card-image-top type2 shadow-lg rounded-2 bg-gray-200">
+                                        <div class="imageWrapper">
+                                            <img src="public/assets/images/media/news/zimbanin-hikayesi-500x400.jpg" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="card-title">
+                                            30 yıl sonra servie gelen Zımba’nın hikayesi
+                                        </div>
+                                        <div class="card-text">
+                                            Almanya’nın Düsseldorf şehrine düzenlenen Win Euarais fuarına katılıyoruz. 32 Hall Stand 20’de sizi bekliyor olacağız.
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--Dökümanlar-->
+            <section>
+                <div class="container">
+                    <div class="sectionBody">
+                        <div class="sectionContent">
+                            <div class="bg-gray-200 rounded-3 border-gray-200-1 p-15">
+                                <div class="cards half docs">
+                                    <div class="card bg-white shadow-lg rounded-3">
+                                        <div class="docDesc">
+                                            <div class="category">Dökümanlar</div>
+                                            <div class="docTitle">
+                                                <span class="iconImg">
+                                                    <img src="public/assets/images/statics/icons/pdf-fill.svg" alt="">
+                                                </span>
+                                                <span>Büro Gereçleri Kataloğu 2026</span>
+                                            </div>
+                                            <p>
+                                                Delta büro gereçleri dünyasını ve tüm ofis çözümlerimizi detaylı teknik verileriyle keşfedin.
+                                            </p>
+                                            <a href="#" target="_blank" class="button button-primary mt-auto md">
+                                                <span>Büro Gereçleri PDF Kataloğu</span>
+                                                <span class="iconImg">
+                                                    <img src="public/assets/images/statics/icons/download.svg" class="filter-white" alt="">
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="card bg-white shadow-lg rounded-3">
+                                        <div class="docDesc">
+                                            <div class="category">Dökümanlar</div>
+                                            <div class="docTitle">
+                                                <span class="iconImg">
+                                                    <img src="public/assets/images/statics/icons/pdf-fill.svg" alt="">
+                                                </span>
+                                                <span>Sanayi Gereçleri Kataloğu 2026</span>
+                                            </div>
+                                            <p>
+                                                Ağır hizmet tipi endüstriyel üretim gücümüzü ve sanayi çözümlerimizi detaylıca inceleyin
+                                            </p>
+                                            <a href="#" target="_blank" class="button button-primary-outline mt-auto md border-gray-200-1">
+                                                <span>Sanayi Gereçleri PDF Kataloğu</span>
+                                                <span class="iconImg">
+                                                    <img src="public/assets/images/statics/icons/download.svg" alt="">
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!---footer-->
+        <footer data-aos="fade-up">
+            <div class="container">
+                <div class="footer bg-primary">
+                    <div class="footerContainer">
+                        <div class="leftColumn">
+                            <a class="logo" href="index.html"><img src="public/assets/images/statics/logo-white.png" alt="DELTA BÜRO GEREÇLERİ ENDÜSTRİ"></a>
+                            <div class="adressColumn">
+                                <div class="item">
+                                    <span class="title">DELTA BÜRO GEREÇLERİ ENDÜSTRİ ZIMBA TELLERİ TİC. VE SAN. A.Ş</span>
+                                    <p>Tahtakale, Tomruk Sokak, Vakıf İş Hanı No:709 Eminönü - İSTANBUL / TÜRKİYE</p>
+                                    <a href="tel:+90-216-655-47-32">Tel : +90 (212) 655 47 32</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footerMenu">
+                            <ul class="footerMenuList">
+                                <li>
+                                    <a href="#">Büro Gereçleri</a>
+                                    <ul>
+                                        <li><a href="#">Zımba Makineleri</a></li>
+                                        <li><a href="#">Delgeçler</a></li>
+                                        <li><a href="#">Ataşlar</a></li>
+                                        <li><a href="#">Tel Sökücüler</a></li>
+                                        <li><a href="#">Mühür Askılıklar</a></li>
+                                        <li><a href="#">Takvim Altlıkları</a></li>
+                                        <li><a href="#">Masaüstü Setler</a></li>
+                                        <li><a href="#">Ahşap Stantlar</a></li>
+                                        <li><a href="#">Ofis Tipi Zımba Telleri</a></li>
+                                        <li><a href="#">Askılı Ürünler</a></li>
+                                        <li><a href="#">Kartelalar</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <span>Sanayi Gereçleri</span>
+                                    <ul>
+                                        <li><a href="#">Havalı Zımba Teli Çakma Makineleri</a></li>
+                                        <li><a href="#">Havalı Çivi Teli Çakma Makineleri</a></li>
+                                        <li><a href="#">Zımba Telleri</a></li>
+                                        <li><a href="#">Çiviler</a></li>
+                                        <li><a href="#">El Çakma Makineleri</a></li>
+                                        <li><a href="#">Standlar</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">Kurumsal</a>
+                                    <ul>
+                                        <li><a href="#">Hakkımızda</a></li>
+                                        <li><a href="#">Üretim ve Kalite</a></li>
+                                        <li><a href="#">Değerlerimiz</a></li>
+                                        <li><a href="#">Özlü Sözler</a></li>
+                                        <li><a href="#">Sertifikalarımız</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">Hızlı Erişim</a>
+                                    <ul>
+                                        <li><a href="#">Sektörler</a></li>
+                                        <li><a href="#">Delta'dan İzler</a></li>
+                                        <li><a href="#">Haber & Fuar</a></li>
+                                        <li><a href="#">İletişim</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <div class="copyRight">© 2026 Delta Büro Gereçleri</div>
+                        <div class="otherMenu">
+                            <a href="#">KVKK Aydınlatma Metni</a>
+                            <a href="#">Çerez Politikası</a>
+                        </div>
+                        <div class="socialMedia">
+                            <a href="#" target="_blank">
+                                <span class="iconImg iconLinkedin">
+                                    <img class="filter-white" src="public/assets/images/statics/icons/linkedin.svg" alt="">
+                                </span>
+                            </a>
+                            <a href="#" target="_blank">
+                                <span class="iconImg iconTwitter">
+                                    <img class="filter-white" src="public/assets/images/statics/icons/twitter.svg" alt="">
+                                </span>
+                            </a>
+                            <a href="#" target="_blank">
+                                <span class="iconImg">
+                                    <img class="filter-white" src="public/assets/images/statics/icons/facebook.svg" alt="">
+                                </span>
+                            </a>
+                            <a href="#" target="_blank">
+                                <span class="iconImg">
+                                    <img class="filter-white" src="public/assets/images/statics/icons/instagram.svg" alt="">
+                                </span>
+                            </a>
+                        </div>
+                        <a class="designLogo" href="https://www.trios.com.tr/" target="_blank">
+                            <img src="public/assets/images/statics/trios-logo.png" alt="Trios Software & Design">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+    <script src="public/assets/plugins/jquery.min.js"></script>
+    <script src="public/assets/plugins/swiper/swiper-bundle.min.js"></script>
+
+    <script type="module" src="public/assets/front/js/app.js" defer></script>
+    <script type="module" src="public/assets/initial/custom-swiper.js" defer></script>
+    
+</body>
+</html>

@@ -1,0 +1,168 @@
+@use "variables" as var;
+
+$breadcrumb-bg: var(--gray-200) !default;
+$breadcrumb-font-size: 13px !default;
+$breadcrumb-padding-y: var.$step * 2 !default;
+$breadcrumb-padding-x: var.$step * 3 !default;
+
+$breadcrumb-color: var(--text) !default;
+$breadcrumb-active-color: var(--secondary) !default;
+
+$breadcrumb-separator: ">" !default;
+$breadcrumb-separator-gap: var.$step * 2 !default;
+
+$breadcrumb-border-radius: 8px !default;
+$breadcrumb-bg-muted: var(--gray-200) !default;
+$breadcrumb-shadow: 0 1px 4px rgba(0, 0, 0, 0.06) !default;
+
+// --- Mixins ---
+@mixin rtl-flip($prop, $value-ltr, $value-rtl) {
+  #{"[dir='ltr'] &"},
+  & {
+    #{$prop}: #{$value-ltr};
+  }
+  [dir="rtl"] & {
+    #{$prop}: #{$value-rtl};
+  }
+}
+
+// --- Breadcrumb ---
+.breadcrumbWrap {
+  height: 40px;
+  nav[aria-label="breadcrumb"] {
+    display: block;
+    padding-top: 0;
+    padding-left: 12px;
+  }
+
+  .breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    // padding: $breadcrumb-padding-y $breadcrumb-padding-x;
+    padding: $breadcrumb-padding-y 0;
+    margin-bottom: 15px;
+    list-style: none;
+    // background-color: $breadcrumb-bg;
+    border-radius: $breadcrumb-border-radius;
+    gap: 0;
+    font-size: $breadcrumb-font-size;
+    font-family: "Inter", sans-serif;
+
+    &.breadcrumb-card {
+      background-color: $breadcrumb-bg-muted;
+      box-shadow: $breadcrumb-shadow;
+      padding: calc($breadcrumb-padding-y * 1.1)
+        calc($breadcrumb-padding-x * 1.25);
+    }
+
+    li.breadcrumb-item {
+      display: inline-flex;
+      color: $breadcrumb-color;
+      align-items: center;
+      cursor: default;
+      font-weight: 400;
+
+      a {
+        color: $breadcrumb-color;
+        text-decoration: none;
+        transition:
+          color 0.15s ease,
+          text-decoration 0.15s ease;
+        display: flex;
+        align-items: center;
+        font-weight: 400;
+        cursor: pointer;
+        svg {
+          transition: all 0.3s linear;
+          path {
+            transition: all 0.3s linear;
+          }
+        }
+        @media screen and (min-width: 992px) {
+          position: relative;
+          // &:after {
+          //   content: "";
+          //   height: 1px;
+          //   width: 0;
+          //   background-color: currentColor;
+          //   transition: all 0.3s linear;
+          //   position: absolute;
+          //   left: 0;
+          //   bottom: 0;
+          // }
+          &:hover {
+            color: $breadcrumb-active-color;
+            outline: none;
+            svg {
+              fill: $breadcrumb-active-color;
+              path {
+                fill: $breadcrumb-active-color;
+              }
+            }
+            // &:after {
+            //   width: 100%;
+            // }
+          }
+        }
+        &:focus {
+          color: $breadcrumb-active-color;
+          outline: none;
+        }
+      }
+
+      &.active {
+        color: $breadcrumb-active-color;
+        a {
+          color: $breadcrumb-active-color;
+          pointer-events: none;
+          &:after {
+            width: 100%;
+          }
+        }
+      }
+
+      &:not(:last-child)::after {
+        content: var(--breadcrumb-divider, #{$breadcrumb-separator});
+        display: inline-block;
+        margin: 0 $breadcrumb-separator-gap;
+        color: $breadcrumb-color;
+
+        @include rtl-flip(margin-left, $breadcrumb-separator-gap, 0);
+        @include rtl-flip(margin-right, $breadcrumb-separator-gap, 0);
+      }
+    }
+  }
+
+  @media (max-width: 575.98px) {
+    .breadcrumb {
+      font-size: 0.875rem;
+      padding: 0.4rem 0.5rem;
+      li.breadcrumb-item:not(:last-child)::after {
+        margin: 0 0.35rem;
+      }
+    }
+  }
+
+  &--small {
+    .breadcrumb {
+      padding: 0.25rem 0.5rem;
+      font-size: 0.8125rem;
+      border-radius: calc($breadcrumb-border-radius / 1.25);
+    }
+  }
+
+  &--large {
+    .breadcrumb {
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+    }
+  }
+
+  .breadcrumb-align-right {
+    justify-content: flex-end;
+  }
+  .breadcrumb-align-center {
+    justify-content: center;
+  }
+}

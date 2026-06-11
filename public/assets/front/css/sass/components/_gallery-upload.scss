@@ -1,0 +1,183 @@
+.galleryUploadContainer {
+  .fileInputBox {
+    position: relative;
+    border: 1px dashed var(--primary);
+    border-radius: 8px;
+    background: var(--gray-200);
+    .fileInputContainer {
+      color: var(--primary);
+      .inputFile {
+        position: absolute;
+        opacity: 0;
+        visibility: hidden;
+      }
+      & > label {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding: 20px;
+        cursor: pointer;
+      }
+      .uploadText {
+        font-weight:600;
+        font-size: 18px;
+        line-height: 25px;
+        color: var(--primary);
+        .text {
+          font-weight:600;
+          font-size: 18px;
+          line-height: 25px;
+          color: var(--primary);
+        }
+        span {
+          display: block;
+          font-size: 14px;
+          color: var(--gray-400);
+          font-weight:600;
+        }
+      }
+      .icon-upload {
+        font-size: 50px;
+      }
+    }
+
+    .uploadGallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 50px 30px;
+      padding: 40px;
+      position: relative;
+      z-index: 1;
+      .item {
+        width: calc(20% - 24px);
+        position: relative;
+        a {
+          display: flex;
+          flex-direction: column;
+        }
+        .deleteItem {
+          cursor: pointer;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          background: rgba(255, 255, 255, 0.8);
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.6);
+          border-radius: 100%;
+          position: absolute;
+          z-index: 2;
+          top: -14px;
+          right: -11px;
+          width: 30px;
+          height: 30px;
+          transition: background 0.3s;
+          color: var(--secondary);
+          svg {
+            transition: all 0.3s linear;
+          }
+          & > span {
+            font-size: 20px;
+            color: var(--gray-900);
+            transition: color 0.3s;
+          }
+          @media screen and (min-width: 992px) {
+            &:hover {
+              background-color: var(--secondary);
+              color: var(--white);
+              & > span {
+                color: var(--white);
+              }
+            }
+          }
+        }
+        .imageWrapper {
+          background-color: var(--gray-2000);
+          border-radius: 8px;
+          aspect-ratio: 8/6;
+          overflow: hidden;
+          margin-bottom: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          img {
+            position: relative;
+            position: relative;
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            width: auto;
+            height: auto;
+          }
+          &:before {
+            content: "";
+            background-image: url("../../img/statics/icons/no-image.svg");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 46px;
+            height: 46px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.1;
+          }
+        }
+        .imgCaptionWrapper {
+          padding-left: 7px;
+          padding-right: 7px;
+          .imgCaptionText {
+            font-size: 14px;
+            color: var(--text-gray);
+            cursor: text;
+          }
+          .imgCaptionInput {
+            font-size: 14px;
+            height: 40px;
+            padding: 0 6px;
+            color: var(--text-gray);
+          }
+        }
+        .imgTitle {
+          font-size: 14px;
+          font-weight:600;
+          color: var(--text-gray);
+          margin-top: 10px;
+          display: block;
+        }
+      }
+    }
+    &.change {
+      label {
+      }
+    }
+    @media screen and (min-width: 992px) {
+      &:hover {
+        border-color: var(--secondary);
+        .fileInputContainer {
+          color: var(--secondary);
+        }
+        .uploadText {
+          .text {
+            color: var(--secondary);
+          }
+        }
+        .box-title {
+          color: var(--secondary);
+        }
+      }
+    }
+  }
+  .box-title {
+    font-size: 20px;
+    font-weight:600;
+    color: var(--primary);
+    margin-bottom: 10px;
+  }
+  .note {
+    font-size: 13px;
+    font-weight:400;
+    color: var(--secondary);
+    margin-top: 4px;
+  }
+}

@@ -1,0 +1,72 @@
+.sideNav {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  .sideBody {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+
+    .sideHead {
+      color: var(--fourth);
+      font-family: "Inter", sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 20px;
+      text-transform: uppercase;
+      padding-bottom: 20px;
+    }
+    .sideLink {
+      font-size: 13px;
+      line-height: 21px;
+      font-family: "Inter", sans-serif;
+      color: var(--gray-400);
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    .sideMenu {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      .sideLink {
+        font-size: 15px;
+        line-height: 21px;
+        font-family: "Inter", sans-serif;
+        color: var(--gray-600);
+        font-weight: 500;
+        text-transform: none;
+        padding: 4.5px 0;
+        position: relative;
+        transition: all 0.3s linear;
+        &:before {
+          content: "";
+          width: 1px;
+          height: 0;
+          background-color: var(--secondary);
+          position: absolute;
+          left: -10px;
+          top: 0;
+          transition: all 0.3s linear;
+        }
+        @media screen and (min-width: 992px) {
+          &:hover {
+            color: var(--primary);
+          }
+        }
+        &.active {
+          color: var(--primary);
+          font-weight: 600;
+          &:before {
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+  .sideFoot {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    padding-bottom: 30px;
+  }
+}

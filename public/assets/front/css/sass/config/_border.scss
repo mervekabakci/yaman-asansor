@@ -1,0 +1,44 @@
+@use "variables" as var;
+
+// Border class generator
+@mixin generate-border-classes($colors, $breakpoints) {
+  // Base classes (no breakpoint)
+  @each $name, $color in $colors {
+    @for $i from 1 through 12 {
+      .border-#{$name}-#{$i} {
+        border: #{$i}px solid $color;
+      }
+    }
+  }
+
+  // Base border colors with currentColor
+  @for $i from 0 through 12 {
+    .border-#{$i} {
+      border: #{$i}px solid currentColor;
+    }
+  }
+
+  // Responsive versions
+  @each $bp-name, $bp-size in $breakpoints {
+    @media (min-width: #{$bp-size}) {
+
+      @each $name, $color in $colors {
+        @for $i from 1 through 12 {
+          .#{$bp-name}\:border-#{$name}-#{$i} {
+            border: #{$i}px solid $color;
+          }
+        }
+      }
+
+      @for $i from 0 through 12 {
+        .border-#{$bp-name}-#{$i} {
+          border: #{$i}px solid currentColor;
+        }
+      }
+
+    }
+  }
+}
+
+// Call the mixin
+@include generate-border-classes(var.$colors, var.$breakpoints);

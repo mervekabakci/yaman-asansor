@@ -1,0 +1,130 @@
+//variables.scss
+
+:root {
+  --white: #ffffff;//kullanılıyor
+  --black: #000000;//kullanılıyor
+  --transparent: rgba(0, 0, 0, 0);
+
+  --primary: #041f3d; //kullanılıyor
+  --secondary: #da302c;//kullanılıyor
+  --tertiary: #718096;//kullanılıyor
+  --fourth:#4a5568;//kullanılıyor
+
+  --text: #252525;//kullanılıyor
+  --text-2: #636364;//kullanılıyor
+  --text-gray: #3f4250;
+
+  --soft-secondary: #f7765a;
+  --black-700: #353535;
+  --black-900: #0b0b0b;
+
+  --light-gray: #f4f4f4;
+  --dark-gray: #262626;
+
+  --gray-50: #f5f5f5; //kullanılıyor
+  --gray-100: #f4f5f6; //kullanılıyor
+  --gray-200: #e6e6e6; //kullanılıyor
+  --gray-250: #d9d9d9; //kullanılıyor
+  --gray-300: #a7a7a7; //kullanılıyor
+  --gray-400: #b5b5b5;
+  --gray-600: #686868;//kullanılıyor
+  --gray-700: #5d5d5d;
+
+  --error: #f30808;
+  --success: #11b928;
+  --warning: #ff7424;
+
+  --button-hover-bg: var(--gray-200);
+}
+
+$colors: (
+  "white": var(--white),
+  "black": var(--black),
+  "transparent": var(--transparent),
+  "primary": var(--primary),
+  "secondary": var(--secondary),
+  "tertiary": var(--tertiary),
+  "fourth": var(--fourth),
+  "text": var(--text),
+  "text-2": var(--text-2),
+  "text-gray": var(--text-gray),
+  "light-gray": var(--light-gray),
+  "dark-gray": var(--dark-gray),
+  "error": var(--error),
+  "success": var(--success),
+  "warning": var(--warning),
+  "gray-50": var(--gray-50),
+  "gray-100": var(--gray-100),
+  "gray-150": var(--gray-150),
+  "gray-200": var(--gray-200),
+  "gray-250": var(--gray-250),
+  "gray-300": var(--gray-300),
+  "gray-400": var(--gray-400),
+  "gray-600": var(--gray-600),
+  "gray-700": var(--gray-700),
+);
+
+$container-padding: (
+  default: 36px,
+  lg: 36px,
+  md: 24px,
+  sm: 16px,
+);
+$grid-columns: 12;
+$gutter: 30px !default;
+$sizes: 25, 50, 75, 100;
+$breakpoints: (
+  xxxl: 1600px,
+  xxl: 1440px,
+  xl: 1200px,
+  lg: 992px,
+  md: 768px,
+  sm: 576px,
+);
+
+// Spacing directions (padding/margin)
+$spacing-directions: (t top, e right, b bottom, s left);
+
+// Display list
+$displays: block inline inline-block flex inline-flex grid inline-grid table
+  table-cell none;
+
+// Flex directions / wrap
+$flex-directions: (row row-reverse column column-reverse);
+$wraps: (nowrap wrap wrap-reverse);
+
+$justify-map: (
+  start: flex-start,
+  end: flex-end,
+  center: center,
+  between: space-between,
+  around: space-around,
+  evenly: space-evenly,
+);
+
+$align-items-map: (
+  start: flex-start,
+  end: flex-end,
+  center: center,
+  stretch: stretch,
+  baseline: baseline,
+);
+
+$align-content-map: (
+  start: flex-start,
+  end: flex-end,
+  center: center,
+  between: space-between,
+  around: space-around,
+  stretch: stretch,
+);
+
+$align-self-map: (
+  auto: auto,
+  start: flex-start,
+  end: flex-end,
+  center: center,
+  stretch: stretch,
+  baseline: baseline,
+);
+$step: 4px;

@@ -1,0 +1,19 @@
+.twiceWrapper{
+    display: flex;
+    align-items: flex-start;
+    .twiceContent{
+        flex: 1;
+        padding-left: 30px;
+    }
+    .twiceRightContent{
+        width: 400px;
+    }
+    .leftCol{
+        width: 380px;
+        max-width: 380px;
+        background-color: var(--white);
+        border-radius: 10px;
+        border: 1px solid var(--gray-200);
+        padding: 30px;
+    }
+}

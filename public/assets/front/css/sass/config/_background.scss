@@ -1,0 +1,12 @@
+
+@use "variables" as var;
+
+//backgorund-color generate class name
+@mixin generate-bg-classes($colors) {
+  @each $name, $color in ($colors) {
+    .bg-#{$name} {
+      background-color: $color !important;
+    }
+  }
+}
+@include generate-bg-classes(var.$colors);

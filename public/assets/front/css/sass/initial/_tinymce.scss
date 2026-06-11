@@ -1,0 +1,16 @@
+.tox {
+  .tox-promotion {
+    display: none;
+  }
+  .tox-statusbar__right-container {
+    display: none!important;
+  }
+  .tox-statusbar{
+    display: none!important;
+  }
+}
+.tox-tinymce{
+    border-radius: 4px!important;
+    border: 1px solid var(--gray-2000)!important;
+}
+

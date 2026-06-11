@@ -1,0 +1,174 @@
+.customTabWrapper {
+  width: 100%;
+  .tab-nav {
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    & > .full-container {
+      display: inline-flex;
+      overflow: hidden;
+      margin: 0;
+      gap: 40px;
+      max-width: 100%;
+      width: auto;
+      border-bottom: 1px solid var(--gray-2000);
+      @media screen and (max-width: 991.98px) {
+        gap: 24px;
+      }
+    }
+    button {
+      border: none;
+      outline: none;
+      cursor: pointer;
+      transition: 0.3s;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 34px;
+      font-family: "Roboto Condensed", sans-serif;
+      font-weight: 400;
+      color: var(--gray-300);
+      position: relative;
+      flex-shrink: 0;
+      padding-bottom: 8px;
+      display: flex;
+      align-items: flex-end;
+      @media screen and (max-width: 1600px) {
+        font-size: 20px;
+        line-height: 28px;
+      }
+      @media screen and (max-width: 991.98px) {
+        font-size: 16px;
+        line-height: 24px;
+        color: var(--gray-400);
+      }
+      &:after {
+        content: "";
+        width: 0;
+        height: 1px;
+        background-color: var(--text);
+        position: absolute;
+        left: 0;
+        bottom: 0px;
+        transition: all 0.3s linear;
+      }
+      @media screen and (min-width: 992px) {
+        &:hover {
+          color: var(--text);
+        }
+      }
+      &.active {
+        color: var(--text);
+        font-size: 35px;
+        line-height: 45px;
+        @media screen and (max-width: 1600px) {
+          font-size: 28px;
+          line-height: 38px;
+        }
+        @media screen and (max-width: 991.98px) {
+          font-size: 20px;
+          line-height: 27px;
+        }
+        &:after {
+          width: 100%;
+        }
+      }
+    }
+    .tab-more {
+      position: relative;
+      display: none;
+    }
+
+    .more-menu {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background: #fff;
+      border: 1px solid #ddd;
+      min-width: 160px;
+      display: none;
+      z-index: 10;
+      padding: 10px;
+      background-color: #fff;
+      border: 1px solid #dee2e6;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+      border-radius: 6px;
+      .tabLinks {
+        min-height: 36px;
+        width: 100%;
+        text-align: left;
+        font-weight: 500;
+        &:after {
+          display: none;
+        }
+        &:not(:first-child) {
+          border-top: 1px solid var(--gray-200);
+        }
+      }
+    }
+
+    .tab-more.open .more-menu {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  .tab-contents {
+    padding-top: 30px;
+    @media screen and (max-width:1600px) {
+      padding-top: 20px;
+    }
+    .tabContent {
+      display: none;
+      border-top: none;
+      flex-direction:column;
+      .title {
+        font-weight: 600;
+        font-size: 18px;
+        color: var(--black-900);
+        margin-bottom: 10px;
+        @media screen and (max-width: 991.98px) {
+          font-size: 16px;
+        }
+      }
+      p {
+        padding-top: 10px;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 32px;
+        color: var(--black-900);
+        padding-bottom: 30px;
+        @media screen and (max-width: 991.98px) {
+          font-size: 14px;
+          line-height: 27px;
+          padding-top: 5px;
+          padding-bottom: 15px;
+        }
+      }
+      .otherInfo {
+        display: flex;
+        align-items: center;
+        font-weight: 600;
+        font-size: 14px;
+        color: var(--tertiary);
+        margin-top: 10px;
+      }
+      &.active {
+        display: flex;
+      }
+    }
+  }
+}
+
+.productSection {
+  .customTabWrapper {
+    .tab-nav {
+      button {
+        min-height: 55px;
+        @media screen and (max-width: 991.98px) {
+          min-height: 35px;
+        }
+      }
+    }
+  }
+}

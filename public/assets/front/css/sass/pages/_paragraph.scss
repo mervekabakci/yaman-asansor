@@ -1,0 +1,138 @@
+.shortText {
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 37px;
+  color: var(--black);
+  margin-bottom: 20px;
+}
+.paragraph {
+  font-size: 14px;
+  line-height: 27px;
+  color: var(--text);
+  font-weight: 400;
+  @media screen and (max-width: 991.98px) {
+    font-size: 14px;
+    line-height: 24px;
+  }
+  h2,
+  .title,
+  span {
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 600;
+    color: var(--secondary);
+    display: block;
+    margin-bottom: 10px;
+    @media screen and (max-width: 991.98px) {
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
+  h3 {
+    font-size: 18px;
+    line-height: 27px;
+    font-weight: 600;
+    color: var(--primary);
+    display: block;
+    margin-bottom: 10px;
+    @media screen and (max-width: 991.98px) {
+      font-size: 17px;
+      line-height: 24px;
+    }
+  }
+  h4 {
+    font-size: 17px;
+    line-height: 27px;
+    font-weight: 600;
+    color: var(--primary);
+    display: block;
+    margin-bottom: 10px;
+    @media screen and (max-width: 991.98px) {
+      font-size: 15.5px;
+      line-height: 24px;
+    }
+  }
+  .category {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    color: var(--primary);
+    @media screen and (max-width: 991.98px) {
+      font-size: 13px;
+      line-height: 20px;
+    }
+  }
+  ul {
+    padding-top: 10px;
+    padding-bottom: 30px;
+    list-style: disc;
+    padding-left: 20px;
+    li {
+      &::marker {
+        color: var(--secondary);
+      }
+    }
+  }
+  ol {
+    list-style-type: decimal;
+  }
+
+  a {
+    font-weight: 600;
+    position: relative;
+    color: var(--secondary);
+    @media screen and (max-width: 991.98px) {
+      text-decoration: underline;
+    }
+    @media screen and (min-width: 992px) {
+      &:after {
+        content: "";
+        width: 100%;
+        height: 0;
+        border-bottom: 1px dotted var(--secondary);
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        transition: all 0.3s linear;
+      }
+      &:hover {
+        &:after {
+          width: 0;
+        }
+      }
+    }
+  }
+
+  .file-list {
+    max-width: 400px;
+    padding-left: 0;
+    span {
+      margin-bottom: 0;
+    }
+    .file-item{
+      padding: 0;
+    }
+    a{
+      display: inline-flex;
+      align-items: center;
+      width: 100%;
+      transition: all .3s linear;
+      padding: 5px 10px;
+      gap:10px;
+      &:after{
+        display: none;
+      }
+      @media screen and (min-width:992px) {
+        &:hover{
+          background-color: var(--secondary);
+          img{
+            filter: invert(1) brightness(1.5);
+          }
+          span{
+            color: var(--white);
+          }
+        }
+      }
+    }
+  }
+}

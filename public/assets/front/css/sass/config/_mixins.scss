@@ -1,0 +1,369 @@
+//mixin.scss
+@use "variables" as var;
+
+@use "sass:list";
+@use "sass:string";
+
+// -----------------------------
+//  flex grow / shrink
+// -----------------------------
+@for $i from 0 through 6 {
+  .flex-grow-#{$i} {
+    flex-grow: $i !important;
+  }
+  .flex-shrink-#{$i} {
+    flex-shrink: $i !important;
+  }
+}
+
+// -----------------------------
+//  justify / align items / align content / align self
+//  (maps => doğru CSS değerleri)
+// -----------------------------
+@each $key, $val in var.$justify-map {
+  .justify-#{$key} {
+    justify-content: $val !important;
+  }
+}
+@each $name, $bp in var.$breakpoints {
+  @media (min-width: $bp) {
+    @each $key, $val in var.$justify-map {
+      .justify-#{$name}-#{$key} {
+        justify-content: $val !important;
+      }
+    }
+  }
+}
+
+@each $key, $val in var.$align-items-map {
+  .items-#{$key} {
+    align-items: $val !important;
+  }
+}
+@each $name, $bp in var.$breakpoints {
+  @media (min-width: $bp) {
+    @each $key, $val in var.$align-items-map {
+      .items-#{$name}-#{$key} {
+        align-items: $val !important;
+      }
+    }
+  }
+}
+
+@each $key, $val in var.$align-content-map {
+  .content-#{$key} {
+    align-content: $val !important;
+  }
+}
+@each $name, $bp in var.$breakpoints {
+  @media (min-width: $bp) {
+    @each $key, $val in var.$align-content-map {
+      .content-#{$name}-#{$key} {
+        align-content: $val !important;
+      }
+    }
+  }
+}
+
+@each $key, $val in var.$align-self-map {
+  .self-#{$key} {
+    align-self: $val !important;
+  }
+}
+
+@each $name, $bp in var.$breakpoints {
+  @media (min-width: $bp) {
+    @each $key, $val in var.$align-self-map {
+      .self-#{$name}-#{$key} {
+        align-self: $val !important;
+      }
+    }
+  }
+}
+
+// -----------------------------
+//  flex direction & wrap (global + breakpoints)
+// -----------------------------
+@each $dir in var.$flex-directions {
+  .flex-#{$dir} {
+    flex-direction: #{$dir} !important;
+  }
+}
+@each $name, $bp in var.$breakpoints {
+  @media (min-width: $bp) {
+    @each $dir in var.$flex-directions {
+      .flex-#{$name}-#{$dir} {
+        flex-direction: #{$dir} !important;
+      }
+    }
+  }
+}
+
+@each $wrap in var.$wraps {
+  .flex-#{$wrap} {
+    flex-wrap: #{$wrap} !important;
+  }
+}
+@each $name, $bp in var.$breakpoints {
+  @media (min-width: $bp) {
+    @each $wrap in var.$wraps {
+      .flex-#{$name}-#{$wrap} {
+        flex-wrap: #{$wrap} !important;
+      }
+    }
+  }
+}
+
+// -----------------------------
+//  display utilities (global + breakpoints)
+// -----------------------------
+@each $d in var.$displays {
+  .d-#{$d} {
+    display: #{$d} !important;
+  }
+}
+@each $name, $bp in var.$breakpoints {
+  @media (min-width: $bp) {
+    @each $d in var.$displays {
+      .d-#{$name}-#{$d} {
+        display: #{$d} !important;
+      }
+    }
+  }
+}
+
+// -----------------------------
+//  width/height utilities
+//  (global)
+// -----------------------------
+@each $s in var.$sizes {
+  // % olarak mevcut
+  .w-#{$s} {
+    width: string.unquote("#{$s}%") !important;
+  }
+  .h-#{$s} {
+    height: string.unquote("#{$s}%") !important;
+  }
+  .min-w-#{$s} {
+    min-width: string.unquote("#{$s}%") !important;
+  }
+  .max-w-#{$s} {
+    max-width: string.unquote("#{$s}%") !important;
+  }
+  .min-h-#{$s} {
+    min-height: string.unquote("#{$s}%") !important;
+  }
+  .max-h-#{$s} {
+    max-height: string.unquote("#{$s}%") !important;
+  }
+
+  // viewport birimleri
+  .vw-#{$s} {
+    width: #{$s}vw !important;
+  }
+  .vh-#{$s} {
+    height: #{$s}vh !important;
+  }
+  .min-vw-#{$s} {
+    min-width: #{$s}vw !important;
+  }
+  .max-vw-#{$s} {
+    max-width: #{$s}vw !important;
+  }
+  .min-vh-#{$s} {
+    min-height: #{$s}vh !important;
+  }
+  .max-vh-#{$s} {
+    max-height: #{$s}vh !important;
+  }
+}
+
+// -----------------------------
+//  breakpoint’li version
+// -----------------------------
+
+@each $name, $bp in var.$breakpoints {
+  @media (min-width: $bp) {
+    @each $s in var.$sizes {
+      // % birimleri
+      .w-#{$name}-#{$s} {
+        width: string.unquote("#{$s}%") !important;
+      }
+      .h-#{$name}-#{$s} {
+        height: string.unquote("#{$s}%") !important;
+      }
+      .min-w-#{$name}-#{$s} {
+        min-width: string.unquote("#{$s}%") !important;
+      }
+      .max-w-#{$name}-#{$s} {
+        max-width: string.unquote("#{$s}%") !important;
+      }
+      .min-h-#{$name}-#{$s} {
+        min-height: string.unquote("#{$s}%") !important;
+      }
+      .max-h-#{$name}-#{$s} {
+        max-height: string.unquote("#{$s}%") !important;
+      }
+
+      // viewport birimleri
+      .vw-#{$name}-#{$s} {
+        width: #{$s}vw !important;
+      }
+      .vh-#{$name}-#{$s} {
+        height: #{$s}vh !important;
+      }
+      .min-vw-#{$name}-#{$s} {
+        min-width: #{$s}vw !important;
+      }
+      .max-vw-#{$name}-#{$s} {
+        max-width: #{$s}vw !important;
+      }
+      .min-vh-#{$name}-#{$s} {
+        min-height: #{$s}vh !important;
+      }
+      .max-vh-#{$name}-#{$s} {
+        max-height: #{$s}vh !important;
+      }
+    }
+  }
+}
+
+
+
+// -----------------------------
+//  margin-padding version
+// -----------------------------
+
+@for $i from 0 through 60 {
+  .p-#{$i} {
+    padding: $i * var.$step !important;
+  }
+  .py-#{$i} {
+    padding-top: $i * var.$step !important;
+    padding-bottom: $i * var.$step !important;
+  }
+  .px-#{$i} {
+    padding-left: $i * var.$step !important;
+    padding-right: $i * var.$step !important;
+  }
+  .m-#{$i} {
+    margin: $i * var.$step !important;
+  }
+  .mx-#{$i} {
+    margin-left: $i * var.$step !important;
+    margin-right: $i * var.$step !important;
+  }
+  .my-#{$i} {
+    margin-top: $i * var.$step !important;
+    margin-bottom: $i * var.$step !important;
+  }
+}
+@each $pair in var.$spacing-directions {
+  $short: list.nth($pair, 1);
+  $full: list.nth($pair, 2);
+  @for $i from 0 through 60 {
+    .p#{$short}-#{$i} {
+      padding-#{$full}: $i * var.$step !important;
+    }
+    .m#{$short}-#{$i} {
+      margin-#{$full}: $i * var.$step !important;
+    }
+  }
+}
+
+@each $name, $bp in var.$breakpoints {
+  @media (min-width: $bp) {
+    @for $i from 0 through 60 {
+      .p-#{$name}-#{$i} {
+        padding: $i * var.$step !important;
+      }
+      .px-#{$name}-#{$i} {
+        padding-left: $i * var.$step !important;
+        padding-right: $i * var.$step !important;
+      }
+      .py-#{$name}-#{$i} {
+        padding-top: $i * var.$step !important;
+        padding-bottom: $i * var.$step !important;
+      }
+      .m-#{$name}-#{$i} {
+        margin: $i * var.$step !important;
+      }
+      .mx-#{$name}-#{$i} {
+        margin-left: $i * var.$step !important;
+        margin-right: $i * var.$step !important;
+      }
+      .my-#{$name}-#{$i} {
+        margin-top: $i * var.$step !important;
+        margin-bottom: $i * var.$step !important;
+      }
+
+      @each $pair in var.$spacing-directions {
+        $short: list.nth($pair, 1);
+        $full: list.nth($pair, 2);
+        .p#{$short}-#{$name}-#{$i} {
+          padding-#{$full}: $i * var.$step !important;
+        }
+        .m#{$short}-#{$name}-#{$i} {
+          margin-#{$full}: $i * var.$step !important;
+        }
+      }
+    }
+  }
+}
+
+// -----------------------------
+//  initial width utilities (global)
+// -----------------------------
+
+.max-w-initial {
+  max-width: initial !important;
+}
+
+.min-w-initial {
+  min-width: initial !important;
+}
+
+.max-h-initial {
+  max-height: initial !important;
+}
+
+.min-h-initial {
+  min-height: initial !important;
+}
+@each $name, $bp in var.$breakpoints {
+  @media (min-width: $bp) {
+    .max-w-#{$name}-initial {
+      max-width: initial !important;
+    }
+
+    .min-w-#{$name}-initial {
+      min-width: initial !important;
+    }
+
+    .max-h-#{$name}-initial {
+      max-height: initial !important;
+    }
+
+    .min-h-#{$name}-initial {
+      min-height: initial !important;
+    }
+  }
+}
+
+
+@for $i from 1 through 12 {
+  .line-clamp-#{$i} {
+    display: -webkit-box;
+    overflow: hidden;
+    -moz-box-orient: vertical;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $i;
+  }
+}
+//bu kullanım css ıcındekı kullanımlar ıcın gecerlıdır. orn:p {@include line-clamp(4);}
+// @mixin line-clamp($lines) {
+//   display: -webkit-box;
+//   overflow: hidden;
+//   -webkit-box-orient: vertical;
+//   -webkit-line-clamp: $lines;
+// }

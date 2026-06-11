@@ -1,0 +1,139 @@
+.status-switch {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  .status-label {
+    font-size: 13px;
+    color: var(--text-2);
+    font-weight: 500;
+    flex: 1;
+    padding-right: 10px;
+    line-height: 17px;
+  }
+  /* Switch gövde */
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 80px;
+    min-width: 80px;
+    height: 30px;
+    cursor: pointer;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    position: absolute;
+  }
+
+  /* Arka plan */
+  .slider {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: var(--gray-2000); /* pasif */
+    border-radius: 999px;
+    transition: 0.3s;
+  }
+
+  /* Yuvarlak knob */
+  .slider::before {
+    content: "";
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    left: 2px;
+    top: 2px;
+    background-color: #fff;
+    border-radius: 50%;
+    z-index: 3;
+    transition: 0.3s;
+  }
+
+  /* Yazılar */
+  .slider span {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .text-off {
+    right: 10px;
+  }
+
+  .text-on {
+    left: 10px;
+    opacity: 0;
+  }
+
+  &.type2 {
+    .switch {
+      width: 50px;
+      min-width: 50px;
+      height: 24px;
+      .slider {
+        &::before {
+          width: 20px;
+          height: 20px;
+        }
+      }
+      // input:checked + .slider::before {
+      //   transform: translateX(25px);
+      // }
+    }
+    .switch:has(input:checked) .slider::before {
+      transform: translateX(25px);
+    }
+  }
+}
+
+.switch:has(input:checked) .slider {
+  background-color: var(--black-700);
+}
+
+.switch:has(input:checked) .slider::before {
+  transform: translateX(48px);
+}
+
+.switch:has(input:checked) .slider .text-off {
+  opacity: 0;
+}
+
+.switch:has(input:checked) .slider .text-on {
+  opacity: 1;
+}
+
+.switch:has(input:disabled) .slider {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+// /* Aktif */
+// .switch input:checked + .slider {
+//   background-color: var(--black-700);
+// }
+
+// .switch input:checked + .slider::before {
+//   transform: translateX(48px);
+// }
+
+// .switch input:checked + .slider .text-off {
+//   opacity: 0;
+// }
+
+// .switch input:checked + .slider .text-on {
+//   opacity: 1;
+// }
+
+// .switch input:disabled + .slider {
+//   opacity: 0.5;
+//   cursor: not-allowed;
+// }

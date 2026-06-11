@@ -1,0 +1,448 @@
+main {
+  &.checkoutMain {
+    padding-top: 120px;
+    min-height: 100vh;
+    @media screen and (max-width: 991.98px) {
+      padding-top: 87px;
+    }
+    .button-liquid {
+      border-radius: 6px !important;
+      font-size: 16px;
+      font-weight: 700;
+      input {
+        font-size: 16px;
+        font-weight: 700;
+      }
+    }
+
+    .scrollContentWrapper {
+      min-height: 100vh;
+      @media screen and (min-width: 992px) {
+        @media screen and (max-width: 1280px) {
+          padding-left: 36px;
+        }
+      }
+    }
+    .checkoutLeftColumn {
+      max-width: 500px;
+      width: 100%;
+      margin-left: auto;
+      padding-bottom: 30px;
+      padding-top: 30px;
+      padding-right: 3vw;
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      @media screen and (max-width: 991.98px) {
+        padding-right: 36px;
+        padding-left: 36px;
+        max-width: initial;
+        margin: 0 auto;
+        padding-top: 0;
+      }
+      @media screen and (max-width: 768px) {
+        padding-right: 24px;
+        padding-left: 24px;
+      }
+
+      .rowTitle {
+        font-size: 18px;
+        color: var(--black);
+        font-family: "Roboto Condensed", sans-serif;
+        font-weight: 500;
+        line-height: 25px;
+        margin-bottom: 5px;
+        @media screen and (max-width: 991.98px) {
+          text-transform: uppercase;
+        }
+      }
+      .form {
+        &.standartForm {
+          .form-control {
+            background-color: var(--white);
+            height: 40px;
+            font-size: 14px;
+            border-color: var(--gray-2000);
+          }
+          textarea {
+            border-color: var(--gray-2000);
+          }
+
+          .select-wrapper {
+            height: 40px;
+          }
+          .customSelect {
+            height: 40px;
+            border-color: var(--gray-2000);
+            padding-right: 40px;
+            &:after {
+              right: 17px;
+            }
+
+            .current {
+              height: 40px;
+            }
+            .current {
+              color: var(--black-600);
+              // color: var(--gray-400);
+            }
+          }
+        }
+      }
+    }
+    .note {
+      font-size: 13px;
+      color: var(--gray-300);
+    }
+    .leftContentFooter {
+      padding-bottom: 20px;
+      padding-top: 30px;
+      margin-top: auto;
+      border-top: 1px solid var(--gray-150);
+      .links {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        @media screen and (max-width: 576px) {
+          flex-direction: column;
+        }
+        a {
+          font-size: 12px;
+          color: var(--text);
+          position: relative;
+          @media screen and (max-width: 991.98px) {
+            text-decoration: underline;
+          }
+          @media screen and (min-width: 992px) {
+            &:after {
+              content: "";
+              width: 100%;
+              border-bottom: 1px solid currentColor;
+              position: absolute;
+              bottom: -2px;
+              left: 0;
+              transition: all 0.3s linear;
+            }
+            &:hover {
+              color: var(--primary-hover);
+              &:after {
+                width: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+    .deliveryAdressCol,
+    .invoiceColGroup {
+      .button-liquid {
+        height: 40px;
+        min-height: 40px;
+      }
+    }
+    .button-liquid {
+      border-radius: 10px;
+    }
+    .transferOptions {
+      .chooises {
+        .container-check {
+          &.payment {
+            .custom-checkbox {
+              padding: 16px;
+              padding-left: 24px !important;
+              @media screen and (max-width: 991.98px) {
+                padding-left: 16px !important;
+              }
+              .checkText {
+                .packetName {
+                  font-size: 14px;
+                  padding-bottom: 4px;
+                  text-transform: uppercase;
+                }
+                .prodName {
+                  font-weight: 500;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .paymentOptions {
+      .container-check {
+        .custom-checkbox {
+          padding: 20px 16px;
+          padding-left: 16px !important;
+        }
+      }
+      .chooises {
+        background: var(--white);
+        // border: 1px solid var(--gray-2000);
+        border-radius: 10px;
+      }
+      .paymentContent {
+        display: none;
+        padding: 30px 16px;
+        @media screen and (max-width: 991.98px) {
+          padding: 16px;
+        }
+        .bankInfo {
+          font-size: 14px;
+          line-height: 27px;
+          color: var(--text);
+          font-weight: 400;
+          @media screen and (max-width: 991.98px) {
+            font-size: 12px;
+            line-height: 20px;
+          }
+          b {
+            font-weight: 600;
+          }
+        }
+        .paragraph {
+          @media screen and (max-width: 991.98px) {
+            font-size: 12px;
+            line-height: 20px;
+          }
+        }
+      }
+      .paymentItem {
+        padding: 0;
+        border: 1px solid var(--gray-2000);
+        &:not(:first-child) {
+          border-top: none;
+          // padding-top: 20px;
+          // transform: translateY(-15px);
+          &.active {
+            padding-top: 0;
+          }
+        }
+        &:first-child {
+          border-radius: 10px 10px 0 0;
+        }
+        &:last-child {
+          border-radius: 0 0 10px 10px;
+        }
+        .custom-checkbox {
+          padding: 20px 16px;
+          @media screen and (max-width: 991.98px) {
+            padding: 10px 16px;
+          }
+
+          .checkText {
+            .packetName {
+              color: var(--black);
+              font-size: 16px;
+              text-transform: uppercase;
+              font-family: "Roboto Condensed", sans-serif;
+              @media screen and (max-width: 991.98px) {
+                font-size: 14px;
+              }
+            }
+          }
+        }
+        &:not(:last-child) {
+          .custom-checkbox {
+            // border-bottom: 1px solid var(--gray-2000);
+          }
+        }
+        &.active {
+          border: 1px solid var(--gray-2000);
+          background: var(--gray-200);
+          &:not(:first-child) {
+            border-top: none;
+          }
+          .custom-checkbox {
+            border-bottom: 1px solid var(--gray-2000);
+          }
+          .paymentContent {
+            display: block;
+          }
+        }
+      }
+      .paymentItem:has(+ .paymentItem.active) .custom-checkbox {
+        padding-bottom: 30px;
+      }
+      .paymentItem:has(+ .paymentItem.active) {
+      }
+    }
+    .invoiceColGroup {
+      border-bottom: 1px solid var(--gray-150);
+      padding-bottom: 20px;
+      .status-label {
+        color: var(--text);
+      }
+    }
+    .rightFixedContent {
+      height: 100vh;
+      .stickyCol {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        @media screen and (max-width: 991.98px) {
+          padding: 0 24px;
+          max-width: initial;
+        }
+        @media screen and (max-width: 768px) {
+          padding: 0 16px;
+        }
+        &.js-sticky.is-bottom {
+          position: fixed;
+          top: 30px;
+          width: var(--sticky-width);
+          bottom: auto;
+          min-height: calc(100vh - 160px);
+        }
+      }
+      .basketList {
+        height: 36vh;
+        overflow: hidden;
+        overflow-y: auto;
+        padding-right: 30px;
+        @media screen and (max-width: 991.98px) {
+          height: auto;
+          padding-right: 0;
+        }
+        &::-webkit-scrollbar {
+          width: 4px;
+          background-color: var(--gray-300);
+          border-radius: 6px;
+        }
+        &::-webkit-scrollbar-thumb {
+          background-color: var(--gray-300);
+          width: 4px;
+          border-radius: 6px;
+        }
+        &::-webkit-scrollbar-track {
+          background-color: var(--gray-150);
+          border-radius: 6px;
+          width: 4px;
+        }
+
+        &.cards {
+          .card {
+            background-color: rgba(0, 0, 0, 0);
+            border-top: none;
+            padding: 12px 0;
+            .card-image-top {
+              width: 70px;
+              min-width: 70px;
+              .imageWrapper {
+                border-radius: 6px;
+              }
+            }
+            .card-body {
+              & > div {
+                align-items: flex-start;
+              }
+              .desc {
+                flex: 3;
+              }
+              .card-title {
+                font-size: 14px;
+                line-height: 20px;
+              }
+              .card-prop {
+                font-size: 12px;
+              }
+              .card-tag {
+                font-size: 12px;
+                margin-top: 0;
+                padding-bottom: 0;
+                line-height: 16px;
+              }
+              .totalPayment {
+                font-size: 15px;
+              }
+            }
+          }
+        }
+      }
+      .payment-discount {
+        border-top: 1px solid var(--gray-2000);
+        padding-top: 10px;
+        display: flex;
+        align-items: center;
+      }
+      .paymentSummaryWrapper {
+        padding-bottom: 10px;
+        padding-right: 15px;
+      }
+    }
+  }
+}
+.userLogedForm{
+  display: none;
+  &.active{
+    display: block;
+  }
+}
+.js-invoice-form {
+  transition:
+    opacity 0.25s ease,
+    height 0.25s ease;
+}
+
+.js-invoice-form.is-hidden {
+  display: none;
+}
+
+.sticky-active {
+  .js-sticky {
+    &.is-fixed {
+      --sticky-offset: 30px !important;
+    }
+  }
+}
+
+.mobileBasketToggle {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background: #fff0c0;
+  color: var(--primary-hover);
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: 600;
+  @media screen and (max-width: 991.98px) {
+    height: 60px;
+  }
+  .iconImg {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    img {
+      transition: transform 0.3s;
+      filter: var(--filter-secondary);
+    }
+  }
+  &.active {
+    border-radius: 6px 6px 0 0;
+    .iconImg {
+      img {
+        transform: rotate(90deg);
+      }
+    }
+  }
+}
+
+@media (max-width: 991.98px) {
+  .rightFixedContent {
+    order: -1;
+    margin-bottom: 0;
+    width: 100%;
+  }
+
+  .mobileBasketToggle {
+    display: flex;
+  }
+
+  .basketAccordion {
+    display: none !important;
+  }
+
+  .basketAccordion.active {
+    display: flex !important;
+  }
+}

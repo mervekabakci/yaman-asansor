@@ -1,0 +1,61 @@
+@use "variables" as var;
+@use "sass:map";
+
+/* -------------------------------------------
+   BASE MIXIN
+------------------------------------------- */
+@mixin container() {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+
+  $base-padding: 40px;
+
+  @if map.has-key(var.$container-padding, default) {
+    $base-padding: map.get(var.$container-padding, default);
+  }
+
+  @media screen and (max-width: 1660px) {
+    padding-left: $base-padding;
+    padding-right: $base-padding;
+  }
+}
+
+/* -------------------------------------------
+   CONTAINER CONFIG
+------------------------------------------- */
+$container-max: (
+  default: 1600px,
+  small: 1360px
+);
+
+/* -------------------------------------------
+   DEFAULT CONTAINER
+------------------------------------------- */
+.container {
+  @include container();
+
+  max-width: map.get($container-max, default);
+
+  @media (max-width: 1599px) {
+    max-width: map.get($container-max, small);
+  }
+}
+
+/* -------------------------------------------
+   FULL WIDTH CONTAINER
+------------------------------------------- */
+.full-container {
+  @include container();
+  max-width: none;
+}
+
+/* -------------------------------------------
+   BREAKPOINT CONTAINERS (OPTIONAL)
+------------------------------------------- */
+@each $name, $bp in var.$breakpoints {
+  .container-#{$name} {
+    @include container();
+    max-width: $bp;
+  }
+}

@@ -1,0 +1,34 @@
+@use "variables" as var;
+
+/* -------------------------------------------
+   TEXT BASE UTILITIES
+------------------------------------------- */
+@mixin generate-text-classes($colors) {
+  @each $name, $color in $colors {
+    .text-#{$name} {
+      color: var(--#{$name}) !important;
+    }
+  }
+}
+
+/* -------------------------------------------
+   TEXT HOVER UTILITIES
+------------------------------------------- */
+.text-hover {
+  @each $name, $value in var.$colors {
+    &-#{$name} {
+      @media (min-width: 992px) {
+        &:not(.noAfter, .disabled) {
+          &:hover {
+            color: var(--#{$name}) !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* -------------------------------------------
+   GENERATE
+------------------------------------------- */
+@include generate-text-classes(var.$colors);

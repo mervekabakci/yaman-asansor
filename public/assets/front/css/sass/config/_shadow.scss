@@ -1,0 +1,37 @@
+@use "sass:map";
+@use "variables" as var;
+
+/* Shadow boyutları */
+$shadow-sizes: (
+  sm: 0 2px 8px rgba(0, 0, 0, 0.08),
+  md: 0 4px 16px rgba(0, 0, 0, 0.16),
+  lg: 0 8px 24px rgba(0, 0, 0, 0.26),
+  xl: 0 12px 32px rgba(0, 0, 0, 0.4),
+);
+
+/* Temel shadow classları */
+@each $name, $value in $shadow-sizes {
+  .shadow-#{$name} {
+    box-shadow: $value;
+  }
+}
+
+/* Shadow kaldır */
+.shadow-none {
+  box-shadow: none;
+}
+
+/* Responsive shadow classları */
+@each $breakpoint, $width in var.$breakpoints {
+  @media (max-width: $width) {
+    @each $name, $value in $shadow-sizes {
+      .shadow-#{$breakpoint}-#{$name} {
+        box-shadow: $value;
+      }
+    }
+
+    .shadow-#{$breakpoint}-none {
+      box-shadow: none;
+    }
+  }
+}

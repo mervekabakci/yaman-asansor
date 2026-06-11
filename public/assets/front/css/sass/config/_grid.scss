@@ -1,0 +1,166 @@
+@use "sass:map";
+@use "sass:list";
+@use "sass:math";
+@use "variables" as var;
+
+@function reverse-map($map) {
+  $keys: map.keys($map);
+  $result: ();
+
+  @for $i from 1 through list.length($keys) {
+    $key: list.nth($keys, list.length($keys) - $i + 1);
+    $result: map.merge($result, ($key: map.get($map, $key)));
+  }
+
+  @return $result;
+}
+// -----------------------------
+// GRID SYSTEM (Bootstrap uyumlu)
+// -----------------------------
+@mixin generate-grid-system($columns, $breakpoints, $gutter: var.$gutter) {
+  // -----------------------------
+  // ROW
+  // -----------------------------
+  .row {
+    --bs-gutter-x: #{$gutter};
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-1 * var(--bs-gutter-y));
+    margin-right: calc(-0.5 * var(--bs-gutter-x));
+    margin-left: calc(-0.5 * var(--bs-gutter-x));
+  }
+
+  .row > * {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-right: calc(var(--bs-gutter-x) / 2);
+    padding-left: calc(var(--bs-gutter-x) / 2);
+    margin-top: var(--bs-gutter-y);
+  }
+
+  // -----------------------------
+  // COLUMNS
+  // -----------------------------
+  .col {
+    flex: 1 0 0%;
+  }
+
+  .col-auto {
+    flex: 0 0 auto;
+    width: auto;
+  }
+
+  @for $i from 1 through $columns {
+    .col-#{$i} {
+      flex: 0 0 math.percentage(math.div($i, $columns));;
+      max-width: math.percentage(math.div($i, $columns));;
+    }
+  }
+
+  // -----------------------------
+  // RESPONSIVE COLUMNS (col-lg-6 vb.)
+  // -----------------------------
+  @each $name, $bp in reverse-map($breakpoints) {
+    @media (min-width: $bp) {
+      .col-#{$name} {
+        flex: 1 0 0%;
+      }
+
+      .col-#{$name}-auto {
+        flex: 0 0 auto;
+        width: auto;
+      }
+
+      @for $i from 1 through $columns {
+        .col-#{$name}-#{$i} {
+          flex: 0 0 math.percentage(math.div($i, $columns));;
+          max-width: math.percentage(math.div($i, $columns));;
+        }
+      }
+    }
+  }
+
+  // -----------------------------
+  // OFFSET SYSTEM
+  // -----------------------------
+  @for $i from 1 through ($columns - 1) {
+    .offset-#{$i} {
+      margin-left: math.percentage(math.div($i, $columns));;
+    }
+  }
+
+  @each $name, $bp in reverse-map($breakpoints) {
+    @media (min-width: $bp) {
+      @for $i from 1 through ($columns - 1) {
+        .offset-#{$name}-#{$i} {
+          margin-left: math.percentage(math.div($i, $columns));;
+        }
+      }
+    }
+  }
+
+  // -----------------------------
+  // ORDER SYSTEM
+  // -----------------------------
+  .order-first { order: -1; }
+  .order-last { order: $columns + 1; }
+  .order-0 { order: 0; }
+
+  @for $i from 1 through $columns {
+    .order-#{$i} { order: $i; }
+  }
+
+  @each $name, $bp in reverse-map($breakpoints) {
+    @media (min-width: $bp) {
+      .order-#{$name}-first { order: -1; }
+      .order-#{$name}-last { order: $columns + 1; }
+      .order-#{$name}-0 { order: 0; }
+
+      @for $i from 1 through $columns {
+        .order-#{$name}-#{$i} { order: $i; }
+      }
+    }
+  }
+
+  // -----------------------------
+  // GAP SYSTEM (Bootstrap 5 uyumlu)
+  // -----------------------------
+  @for $i from 0 through 20 {
+    $gap: $i * var.$step;
+
+    .g-#{$i} {
+      --bs-gutter-x: #{$gap};
+      --bs-gutter-y: #{$gap};
+    }
+
+    .gx-#{$i} {
+      --bs-gutter-x: #{$gap};
+    }
+
+    .gy-#{$i} {
+      --bs-gutter-y: #{$gap};
+    }
+
+    @each $name, $bp in reverse-map($breakpoints) {
+      @media (min-width: $bp) {
+        .g-#{$name}-#{$i} {
+          --bs-gutter-x: #{$gap};
+          --bs-gutter-y: #{$gap};
+        }
+        .gx-#{$name}-#{$i} {
+          --bs-gutter-x: #{$gap};
+        }
+        .gy-#{$name}-#{$i} {
+          --bs-gutter-y: #{$gap};
+        }
+      }
+    }
+  }
+}
+
+// -----------------------------
+// MIXIN ÇAĞIR
+// -----------------------------
+@include generate-grid-system(var.$grid-columns, var.$breakpoints, var.$gutter);

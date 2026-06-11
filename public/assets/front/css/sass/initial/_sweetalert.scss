@@ -1,0 +1,79 @@
+div:where(.swal2-icon) {
+  &.swal2-warning {
+    width: 40px;
+    height: 40px;
+  }
+  .swal2-icon-content {
+    font-size: 26px !important;
+  }
+}
+div:where(.swal2-container) h2:where(.swal2-title) {
+  font-size: 22px;
+}
+div:where(.swal2-container) button:where(.swal2-styled):focus-visible {
+  box-shadow: none;
+}
+.swal2-html-container {
+  display: flex;
+  flex-direction: column;
+  & > p {
+    font-size: 16px;
+    color: var(--primary);
+    font-weight:500;
+  }
+
+  ul {
+    padding-top: 20px;
+    padding-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    li {
+      font-size: 14px;
+      color: var(--secondary);
+      font-weight:500;
+      border: 1px solid var(--gray-2000);
+      padding: 10px 24px;
+      border-radius: 6px;
+    }
+  }
+}
+
+/* OK (Onay) Butonu */
+.swal-confirm,
+.swal2-confirm {
+  background-color: var(--success) !important;
+  border: none;
+  box-shadow: none;
+  color: #fff !important;
+  padding: 8px 20px;
+  border-radius: 6px;
+  border: none;
+  font-size: 15px;
+}
+
+/* Cancel (İptal) Butonu */
+.swal-cancel,
+.swal2-cancel {
+  background-color: var(--error) !important;
+  color: #fff !important;
+  padding: 8px 20px;
+  border-radius: 6px;
+  border: none;
+  font-size: 15px;
+  box-shadow: none;
+  margin-left: 8px;
+}
+
+/* Deny (Red Etme) Butonu */
+.swal-deny,
+.swal2-deny {
+  background-color: var(--tertiary) !important;
+  color: #fff !important;
+  box-shadow: none;
+  padding: 8px 20px;
+  border-radius: 6px;
+  border: none;
+  font-size: 15px;
+  margin-left: 8px;
+}

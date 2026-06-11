@@ -1,0 +1,52 @@
+@use "sass:map";
+@use "sass:meta";
+@use "variables" as var;
+
+// Base utility classes
+$auto-utilities: (
+  "h": (property: height, value: auto),
+  "w": (property: width, value: auto),
+  "mx": (property: (margin-left, margin-right), value: auto),
+  "my": (property: (margin-top, margin-bottom), value: auto),
+  "ms": (property: margin-left, value: auto),
+  "me": (property: margin-right, value: auto),
+  "mt": (property: margin-top, value: auto),
+  "mb": (property: margin-bottom, value: auto)
+);
+
+// Base (no breakpoint)
+@each $name, $props in $auto-utilities {
+  $property: map.get($props, property);
+  $value: map.get($props, value);
+
+  .#{$name}-auto {
+    @if meta.type-of($property) == list {
+      @each $prop in $property {
+        #{$prop}: #{$value} !important;
+      }
+    } @else {
+      #{$property}: #{$value} !important;
+    }
+  }
+}
+
+
+@each $breakpoint, $width in var.$breakpoints {
+  @media (min-width: #{$width}) {
+    @each $name, $props in $auto-utilities {
+      $property: map.get($props, property);
+      $value: map.get($props, value);
+
+      // 🔥 DÜZELTİLEN SATIR:
+      .#{$name}-#{$breakpoint}-auto {
+        @if meta.type-of($property) == list {
+          @each $prop in $property {
+            #{$prop}: #{$value} !important;
+          }
+        } @else {
+          #{$property}: #{$value} !important;
+        }
+      }
+    }
+  }
+}

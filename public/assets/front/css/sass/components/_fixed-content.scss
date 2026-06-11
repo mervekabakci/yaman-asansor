@@ -1,0 +1,398 @@
+.scrollContentWrapper {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 480px;
+  gap: 40px;
+  align-items: start;
+  @media screen and (max-width: 1366px) {
+    grid-template-columns: minmax(0, 1fr) 360px;
+  }
+  @media screen and (max-width: 991.98px) {
+    // grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+  }
+  .leftContent {
+    @media screen and (max-width: 991.98px) {
+      width: 100%;
+    }
+    @media screen and (min-width:992px) {
+      min-height: calc(100vh - 160px);
+    }
+  }
+  .basketList {
+    .card {
+      &:not(:first-child) {
+        border-top: 1px solid var(--gray-150);
+      }
+      .quantityCol {
+        &.type2 {
+          margin-bottom: 20px;
+          margin-top: 10px;
+        }
+      }
+      .card-body {
+        .desc {
+          flex: 2;
+        }
+        & > div {
+          flex: 1;
+          display: flex;
+          align-items: center;
+        }
+      }
+
+      .card-right {
+        text-align: right;
+        justify-content: flex-end;
+        min-width: 110px;
+        @media screen and (max-width: 991.98px) {
+          justify-content: flex-start;
+        }
+        .totalPayment {
+          font-size: 18px;
+          font-weight: 700;
+          color: var(--gray-700);
+          align-items: flex-end;
+          line-height: 27px;
+        }
+      }
+    }
+  }
+  &.type2 {
+    grid-template-columns: minmax(0, 1fr) 50%;
+    border-top: 1px solid var(--gray-150);
+    gap: 0;
+    .leftContent {
+      height: 100%;
+      @media screen and (max-width: 991.98px) {
+        width: 100%;
+      }
+    }
+    .js-sticky {
+      padding-left: 3vw;
+    }
+    .rightFixedContent {
+      background-color: var(--gray-200);
+      border-left: 1px solid var(--gray-150);
+      height: 100%;
+      @media screen and (max-width: 991.98px) {
+        height: auto;
+        width: calc(100% - 40px);
+        margin: 20px auto;
+      }
+    }
+    .js-sticky.is-bottom {
+      max-width: 650px;
+    }
+  }
+}
+
+.js-sticky-container {
+  position: relative;
+}
+
+.js-sticky {
+  position: relative;
+  width: 100%;
+  max-width: 650px;
+}
+
+.js-sticky.is-fixed {
+  position: fixed;
+  top: var(--sticky-offset, 20px);
+  width: var(--sticky-width);
+}
+
+.js-sticky.is-bottom {
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  width: 100%;
+  max-width: 480px;
+  @media screen and (max-width: 1366px) {
+    max-width: 360px;
+  }
+}
+.rightFixedContent {
+  @media screen and (max-width: 991.98px) {
+    height: auto;
+    width: calc(100% - 40px);
+    margin: 20px auto;
+    border: none;
+    border-radius: 6px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+  }
+}
+.rightFixedContent:has(.stickyCol.active) {
+  @media screen and (max-width: 991.98px) {
+    margin-bottom: 60px;
+  }
+}
+.stickyCol {
+  background-color: var(--gray-200);
+  border-radius: 30px;
+  padding: 40px 30px 40px 40px;
+  max-height: calc(100vh - 160px);
+  height: 100%;
+  @media screen and (max-width: 1600px) {
+    padding: 24px;
+  }
+  @media screen and (max-width: 991.98px) {
+    border-radius: 6px;
+    padding: 36px;
+  }
+  @media screen and (max-width: 768px) {
+    padding: 24px;
+  }
+  .basketWrapper {
+    gap: 40px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: auto;
+    padding-right: 10px;
+    &::-webkit-scrollbar {
+      width: 4px;
+      background-color: var(--gray-300);
+      border-radius: 6px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--gray-300);
+      width: 4px;
+      border-radius: 6px;
+    }
+    &::-webkit-scrollbar-track {
+      background-color: var(--gray-150);
+      border-radius: 6px;
+      width: 4px;
+    }
+    @media screen and (max-width: 1600px) {
+      gap: 20px;
+    }
+  }
+  .discountWrapper {
+    background-color: var(--white);
+    border-radius: 20px;
+    padding: 40px 20px;
+    @media screen and (max-width: 1600px) {
+      padding: 20px;
+    }
+    @media screen and (max-width: 991.98px) {
+      border-radius: 6px;
+      padding: 20px 16px;
+    }
+  }
+  .paymentSummaryWrapper {
+    flex-direction: column;
+    gap: 40px;
+    @media screen and (max-width: 1600px) {
+      gap: 20px;
+    }
+    .form {
+      @media screen and (max-width: 1600px) {
+        gap: 10px;
+      }
+      @media screen and (max-width: 1366px) {
+        gap: 5px;
+      }
+    }
+    .summary {
+    }
+    .summaryTotal {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      border-bottom: 1px solid var(--gray-150);
+      padding-bottom: 10px;
+      .title {
+        font-size: 24px;
+        font-weight: 500;
+        @media screen and (max-width: 1600px) {
+          font-size: 20px;
+          line-height: 27px;
+        }
+        @media screen and (max-width: 1366px) {
+          font-size: 18px;
+          line-height: 24px;
+        }
+      }
+      .total {
+        margin-left: auto;
+        font-size: 30px;
+        font-weight: 700;
+        @media screen and (max-width: 1600px) {
+          font-size: 24px;
+          line-height: 32px;
+        }
+        @media screen and (max-width: 1366px) {
+          font-size: 20px;
+          line-height: 27px;
+        }
+      }
+    }
+    .note {
+      font-size: 13px;
+      color: var(--gray-350);
+      @media screen and (max-width: 1366px) {
+        font-size: 12px;
+      }
+    }
+    .standartForm {
+      @media screen and (max-width: 991.98px) {
+        gap: 10px;
+      }
+      .formTitle {
+        font-size: 18px;
+        color: var(--black-700);
+        font-weight: 400;
+        margin-bottom: 5px;
+        margin-top: 0;
+        text-transform: none;
+        @media screen and (max-width: 1600px) {
+          font-size: 16px;
+        }
+        @media screen and (max-width: 1366px) {
+          font-size: 14px;
+        }
+      }
+      .form-label {
+        font-size: 16px;
+        @media screen and (max-width: 1600px) {
+          font-size: 14px;
+        }
+        @media screen and (max-width: 1366px) {
+          transform: translateY(10px);
+        }
+      }
+      textarea {
+        height: 150px !important;
+        max-height: initial;
+        background-color: rgba(0, 0, 0, 0);
+        padding-top: 30px;
+        @media screen and (max-width: 1600px) {
+          height: 100px !important;
+        }
+        @media screen and (max-width: 1366px) {
+          padding-top: 24px;
+          height: 80px !important;
+        }
+      }
+      .form-buttons {
+        .text {
+          font-size: 13px;
+          color: var(--gray-400);
+          line-height: 20px;
+          position: relative;
+          font-weight: 500;
+          padding-top: 15px;
+          @media screen and (max-width: 1600px) {
+            font-size: 12px;
+            line-height: 18px;
+          }
+          a {
+            font-weight: 600;
+            display: inline-flex;
+            position: relative;
+            @media screen and (max-width: 991.98px) {
+              text-decoration: underline;
+            }
+            @media screen and (min-width: 992px) {
+              &:after {
+                content: "";
+                width: 100%;
+                border-bottom: 1px solid var(--gray-500);
+                position: absolute;
+                bottom: -2px;
+                left: 0;
+                transition: all 0.3s linear;
+              }
+              &:hover {
+                &:after {
+                  width: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.promotionalCodeWrapper {
+  background-color: var(--gray-200);
+  border-radius: 10px;
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 40px;
+  @media screen and (max-width: 991.98px) {
+    padding: 20px 16px;
+  }
+  .caption {
+    font-size: 16px;
+    color: var(--text);
+    font-weight: 600;
+  }
+  .codeInputWrapper {
+    display: flex;
+    align-items: stretch;
+    width: 500px;
+    gap: 10px;
+    @media screen and (max-width: 991.98px) {
+      width: 100%;
+      max-width: 500px;
+    }
+    .codeInput {
+      height: 50px;
+      border: 1px solid var(--gray-2000);
+      border-radius: 6px;
+      flex: 1;
+      padding: 0 24px;
+      font-size: 15px;
+      color: var(--text);
+      font-weight: 600;
+      @media screen and (max-width: 991.98px) {
+        height: 45px;
+        font-size: 14px;
+        padding: 0 16px;
+      }
+      &::placeholder {
+        font-weight: 400;
+      }
+      &::-webkit-input-placeholder {
+        font-weight: 400;
+      }
+      &::-moz-placeholder {
+        font-weight: 400;
+      }
+    }
+  }
+  .note {
+    font-size: 13px;
+    line-height: 20px;
+    color: var(--gray-400);
+    font-weight: 400;
+  }
+
+  &.type2 {
+    padding: 0;
+    background-color: rgba(0, 0, 0, 0);
+    margin-top: 0;
+    .codeInputWrapper {
+      width: 100%;
+    }
+  }
+}
+@media (max-width: 991.98px) {
+  .js-sticky,
+  .js-sticky.is-fixed,
+  .js-sticky.is-bottom {
+    position: relative;
+    top: auto;
+    bottom: auto;
+    width: 100%;
+  }
+}

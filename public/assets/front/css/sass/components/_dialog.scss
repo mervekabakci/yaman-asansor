@@ -1,0 +1,451 @@
+dialog {
+  border: none;
+  outline: 0;
+  padding: 50px 30px;
+  max-width: 800px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  &::-webkit-scrollbar {
+    background-color: var(--gray-200);
+    border-radius: 6px;
+    width: 4px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--gray-2000);
+    border-radius: 6px;
+    width: 4px;
+  }
+  &::-webkit-scrollbar-track {
+    border-radius: 6px;
+    background-color: var(--gray-200);
+    width: 4px;
+  }
+
+  @media screen and (max-width: 991.98px) {
+    padding: 20px 16px;
+  }
+
+  &::backdrop {
+    background: rgba(0, 0, 0, 0.7);
+  }
+  .closeBtn {
+    background: var(--secondary);
+    opacity: 1;
+    color: #ffffff;
+    min-width: 50px;
+    width: auto;
+    height: 45px;
+    border-radius: 6px 6px 0 0;
+    padding: 0 20px;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border: 1px solid var(--secondary);
+    transition: all 0.3s linear;
+    box-sizing: border-box;
+    margin-left: auto;
+    span {
+      font-weight: 600;
+    }
+    @media screen and (min-width: 992px) {
+      &:hover {
+        color: var(--fifth);
+        background-color: #ffffff;
+        border-color: var(--white);
+        .iconImg {
+          .filter-invert {
+            filter: none;
+          }
+        }
+      }
+    }
+  }
+  .dialogBody {
+    background-color: var(--white);
+    border-radius: 10px 0 10px 10px;
+    padding: 30px 30px 50px;
+    overflow: hidden;
+    @media screen and (max-width: 991.98px) {
+      padding: 20px 16px 30px;
+    }
+  }
+  .dialogHead {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0 15px;
+    border-bottom: 1px solid var(--gray-300);
+    border-top-left-radius: calc(0.3rem - 1px);
+    border-top-right-radius: calc(0.3rem - 1px);
+    @media screen and (max-width: 1440px) {
+      padding: 0 0 10px;
+    }
+    @media screen and (max-width: 991.98px) {
+      padding: 0;
+    }
+    &.border-none {
+      border: none;
+    }
+    .dialogTitle {
+      font-size: 20px;
+      line-height: 27px;
+      font-style: normal;
+      font-weight: 600;
+      color: var(--black);
+      position: relative;
+      font-family: "Roboto Condensed", sans-serif;
+      text-transform: uppercase;
+      // &:after {
+      //   content: "";
+      //   width: 50px;
+      //   height: 2px;
+      //   background-color: var(--secondary);
+      //   position: absolute;
+      //   left: 0;
+      //   bottom: -3px;
+      // }
+    }
+    &.brand {
+      background-color: var(--gray-50);
+      padding: 10px 20px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 30px;
+      border: none;
+      position: relative;
+      margin-bottom: 20px;
+      @media screen and (max-width: 991.98px) {
+        gap: 15px;
+      }
+      @media screen and (max-width: 768px) {
+        flex-direction: column;
+        justify-content: center;
+      }
+      .hanterraLogoItem {
+        height: 70px;
+        padding-right: 28px;
+        position: relative;
+        @media screen and (max-width: 991.98px) {
+          padding-right: 13px;
+        }
+        @media screen and (max-width: 768px) {
+          padding-right: 0;
+        }
+        &:after {
+          content: "";
+          border-right: 1px solid var(--gray-2000);
+          position: absolute;
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          height: calc(100% - 30px);
+          @media screen and (max-width: 768px) {
+            display: none;
+          }
+        }
+
+        img {
+          height: 100%;
+        }
+      }
+    }
+  }
+  .partnerContact {
+    padding-left: 16px;
+    padding-right: 16px;
+    .map {
+      border-left: 1px solid var(--gray-200);
+      @media screen and (min-width: 992px) {
+        padding-left: 60px;
+      }
+      iframe {
+        border-radius: 10px;
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+    .adressDetails {
+      @media screen and (min-width: 992px) {
+        padding-right: 40px;
+      }
+      .logo {
+        width: 150px;
+        margin-bottom: 20px;
+      }
+      .item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 14px;
+        line-height: 22px;
+        font-weight: 400;
+        padding-top: 10px;
+        border-top: 1px solid var(--gray-200);
+        padding: 20px 0;
+
+        .title {
+          font-weight: 700;
+          color: var(--text);
+          min-width: 120px;
+          padding-right: 20px;
+          @media screen and (max-width: 991.98px) {
+            min-width: 100px;
+          }
+        }
+        a {
+          color: var(--primary-hover);
+          font-weight: 600;
+          .iconImg {
+            img {
+              transition: all 0.3s linear;
+            }
+          }
+          @media screen and (min-width: 992px) {
+            &:hover {
+              color: var(--secondary);
+              .iconImg {
+                img {
+                  filter: var(--filter-secondary);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .dialogContent {
+    flex: 1 1 auto;
+    padding: 15px 0 0;
+    position: relative;
+    @media screen and (max-width: 1440px) {
+      padding: 10px 0;
+    }
+    .loadImage {
+      max-height: 600px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @media screen and (max-width: 1600px) {
+        max-height: 450px;
+      }
+    }
+    p {
+      color: #444;
+      font-size: 14px;
+      line-height: 24px;
+      margin: 0;
+    }
+
+    .form {
+      &.standartForm {
+        .form-control {
+          background-color: var(--white);
+        }
+      }
+    }
+  }
+  .dialogFooter {
+    display: flex;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 1rem;
+    border-top: 1px solid #dee2e6;
+    border-bottom-right-radius: calc(0.3rem - 1px);
+    border-bottom-left-radius: calc(0.3rem - 1px);
+    .statusButton {
+      width: 100%;
+    }
+  }
+  &.lg {
+    max-width: 1200px;
+    @media screen and (max-width:1600px) {
+      max-width:900px;
+    }
+  }
+
+  &.dialog {
+    &-fade-scale {
+      opacity: 0;
+      transform: scale(0.75) translateY(20px);
+      visibility: hidden;
+      transition:
+        opacity 0.4s ease,
+        transform 0.4s ease;
+
+      &::backdrop {
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      &[open]::backdrop {
+        opacity: 1;
+      }
+
+      &.is-visible {
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1) translateY(0);
+      }
+    }
+    // Fade-Up (alttan yukarı)
+    &-fade-up {
+      opacity: 0;
+      transform: translateY(40px);
+      visibility: hidden;
+      transition:
+        opacity 0.4s ease,
+        transform 0.4s ease;
+
+      &::backdrop {
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      &[open]::backdrop {
+        opacity: 1;
+      }
+
+      &.is-visible {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+    }
+
+    // Fade-Down (yukarıdan aşağı)
+    &-fade-down {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-100%);
+      transition:
+        opacity 0.4s linear,
+        transform 0.4s linear;
+
+      &::backdrop {
+        opacity: 0;
+        transition: opacity 0.3s linear;
+      }
+
+      &[open]::backdrop {
+        opacity: 1;
+      }
+
+      &.is-visible {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    // Fade-Left (soldan giriş)
+    &-fade-left {
+      opacity: 0;
+      transform: translateX(-60px);
+      visibility: hidden;
+      transition:
+        opacity 0.4s ease,
+        transform 0.4s ease;
+
+      &::backdrop {
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      &[open]::backdrop {
+        opacity: 1;
+      }
+
+      &.is-visible {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0);
+      }
+    }
+
+    // Fade-Right (sağdan giriş)
+    &-fade-right {
+      opacity: 0;
+      transform: translateX(60px);
+      visibility: hidden;
+      transition:
+        opacity 0.4s ease,
+        transform 0.4s ease;
+
+      &::backdrop {
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      &[open]::backdrop {
+        opacity: 1;
+      }
+
+      &.is-visible {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0);
+      }
+    }
+
+    // Zoom-in (daha yumuşak scale efekti)
+    &-zoom-in {
+      opacity: 0;
+      transform: scale(0.6);
+      visibility: hidden;
+      transition:
+        opacity 0.4s ease,
+        transform 0.4s ease;
+
+      &::backdrop {
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      &[open]::backdrop {
+        opacity: 1;
+      }
+
+      &.is-visible {
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1);
+      }
+    }
+
+    // Rotate-in (dönerek giriş)
+    &-rotate-in {
+      opacity: 0;
+      transform: rotate(-10deg) scale(0.9);
+      visibility: hidden;
+      transition:
+        opacity 0.4s ease,
+        transform 0.4s ease;
+
+      &::backdrop {
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      &[open]::backdrop {
+        opacity: 1;
+      }
+
+      &.is-visible {
+        opacity: 1;
+        visibility: visible;
+        transform: rotate(0deg) scale(1);
+      }
+    }
+  }
+}

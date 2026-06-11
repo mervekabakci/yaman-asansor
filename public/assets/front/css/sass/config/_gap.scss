@@ -1,0 +1,25 @@
+@use "sass:map";
+@use "sass:math";
+@use "variables" as var;
+
+// Gap değerlerini oluşturmak için mixin
+@mixin generate-gap-utilities($breakpoints, $step, $max: 20) {
+  // Ana gap sınıfları
+  @for $i from 0 through $max {
+    .gap-#{$i} {
+      gap: $i * $step;
+    }
+  }
+
+  // Responsive gap sınıfları (örnek: gap-lg-5)
+  @each $breakpoint, $value in $breakpoints {
+    @media (min-width: $value) {
+      @for $i from 0 through $max {
+        .gap-#{$breakpoint}-#{$i} {
+          gap: $i * $step;
+        }
+      }
+    }
+  }
+}
+@include generate-gap-utilities($breakpoints: var.$breakpoints, $step: var.$step, $max: 20);
