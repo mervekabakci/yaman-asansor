@@ -7,7 +7,7 @@ header {
   width: 100%;
   z-index: 999;
   transition: all 0.3s linear;
-  height: 155px;
+  height: 185px;
   @media screen and (max-width: 1440px) {
     height: 60px;
   }
@@ -54,11 +54,11 @@ header {
           height: 30px;
           font-size: 15px;
           font-weight: 500;
-          padding-left:0;
+          padding-left: 0;
         }
-        &.show{
-          .dropdown-toggle{
-            background-color: rgba(0,0,0,0);
+        &.show {
+          .dropdown-toggle {
+            background-color: rgba(0, 0, 0, 0);
           }
         }
       }
@@ -66,6 +66,7 @@ header {
     .otherLinks {
       display: flex;
       align-items: center;
+      gap: 20px;
       a {
         display: flex;
         align-items: center;
@@ -114,7 +115,7 @@ header {
     padding-left: 16px;
     .rightWrap {
       gap: 50px;
-      @media screen and (max-width:1600px) {
+      @media screen and (max-width: 1600px) {
         gap: 30px;
       }
     }
@@ -137,7 +138,7 @@ header {
     }
   }
   .logo {
-    height: 84px;
+    height: 115px;
     display: flex;
     align-items: flex-start;
     gap: 18px;
@@ -192,14 +193,14 @@ header {
     .headerTop {
       display: none;
     }
-    nav{
+    nav {
       padding-top: 0;
     }
     .header {
       height: 100%;
       display: flex;
       align-items: center;
-      .logo{
+      .logo {
         height: 65px;
       }
     }
@@ -227,12 +228,21 @@ header {
   .socialMediaList {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 20px;
 
     .iconImg {
-      .icon {
-        width: 24px;
-        height: 24px;
+      width: 24px;
+      height: 24px;
+      img {
+        max-width: initial;
+      }
+      &.iconLinkedin {
+        width: 26px;
+        height: 26px;
+      }
+      &.iconTwitter{
+        width: 20px;
+        height: 20px;
       }
     }
     a {

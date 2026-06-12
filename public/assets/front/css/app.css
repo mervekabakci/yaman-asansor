@@ -37821,7 +37821,7 @@ header {
   width: 100%;
   z-index: 999;
   transition: all 0.3s linear;
-  height: 155px;
+  height: 185px;
 }
 @media screen and (max-width: 1440px) {
   header {
@@ -37876,6 +37876,7 @@ header .headerTop .dropdown.fixDropdown.show .dropdown-toggle {
 header .headerTop .otherLinks {
   display: flex;
   align-items: center;
+  gap: 20px;
 }
 header .headerTop .otherLinks a {
   display: flex;
@@ -37950,7 +37951,7 @@ header .iconImg img {
   max-width: 100%;
 }
 header .logo {
-  height: 84px;
+  height: 115px;
   display: flex;
   align-items: flex-start;
   gap: 18px;
@@ -38036,11 +38037,22 @@ header.fixed .header .logo {
 .socialMediaWrap .socialMediaList {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 20px;
 }
-.socialMediaWrap .socialMediaList .iconImg .icon {
+.socialMediaWrap .socialMediaList .iconImg {
   width: 24px;
   height: 24px;
+}
+.socialMediaWrap .socialMediaList .iconImg img {
+  max-width: initial;
+}
+.socialMediaWrap .socialMediaList .iconImg.iconLinkedin {
+  width: 26px;
+  height: 26px;
+}
+.socialMediaWrap .socialMediaList .iconImg.iconTwitter {
+  width: 20px;
+  height: 20px;
 }
 .socialMediaWrap .socialMediaList a {
   color: var(--white);
@@ -45072,6 +45084,16 @@ main.checkoutMain .rightFixedContent .paymentSummaryWrapper {
 .homeBanner .bannerImage {
   border-radius: 20px;
   overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+.homeBanner .bannerImage img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
 }
 .homeBanner .bannerDesc {
   position: absolute;
@@ -46024,22 +46046,24 @@ section .logoWrapper .logos img,
 .homeBannerSlide {
   border-radius: 20px;
   overflow: hidden;
-  height: 650px;
   padding-bottom: 0;
 }
+.homeBannerSlide .sliderWrapper {
+  height: 650px;
+}
 @media screen and (max-width: 1600px) {
-  .homeBannerSlide {
+  .homeBannerSlide .sliderWrapper {
     height: 550px;
   }
+}
+.homeBannerSlide .singleSlide {
+  height: 100%;
 }
 
 .sliderWrapper {
   position: relative;
   width: 100%;
   height: 100%;
-}
-.sliderWrapper.homeBannerSlide {
-  padding-bottom: 0;
 }
 .sliderWrapper .quintetteSlider {
   margin: 0 -7.5px;
