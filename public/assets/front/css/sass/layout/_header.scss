@@ -1,5 +1,4 @@
 header {
-  background-color: rgba(0, 0, 0, 0);
   position: absolute;
   top: 0;
   left: 0;
@@ -7,7 +6,8 @@ header {
   width: 100%;
   z-index: 999;
   transition: all 0.3s linear;
-  height: 185px;
+  height: 105px;
+  padding: 10px 0;
   @media screen and (max-width: 1440px) {
     height: 60px;
   }
@@ -115,8 +115,26 @@ header {
     padding-left: 16px;
     .rightWrap {
       gap: 50px;
+      display: flex;
+      align-items: center;
       @media screen and (max-width: 1600px) {
         gap: 30px;
+      }
+      a {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 16px;
+        color: var(--text);
+      }
+      .callLink {
+        color: var(--secondary);
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 30px;
+        .iconImg {
+          width: 30px;
+        }
       }
     }
   }
@@ -138,18 +156,17 @@ header {
     }
   }
   .logo {
-    height: 115px;
     display: flex;
-    align-items: flex-start;
-    gap: 18px;
+    align-items: center;
     position: relative;
     z-index: 99;
+    width: 300px;
     @media screen and (max-width: 1440px) {
       height: 50px;
       gap: 10px;
     }
     img {
-      height: 100%;
+      width: 100%;
       transition: all 0.3s linear;
     }
     @media screen and (min-width: 992px) {
@@ -164,19 +181,6 @@ header {
     @media screen and (max-width: 1440px) {
       height: 40px;
     }
-  }
-  &:not(.homeHeader) {
-    position: relative;
-    nav {
-    }
-  }
-  &.homeHeader {
-    // display: flex;
-    // align-items: center;
-    // height: 100px;
-    // @media screen and (max-width: 991.98px) {
-    //   height: 75px;
-    // }
   }
   &.fixed {
     position: fixed;
@@ -201,7 +205,7 @@ header {
       display: flex;
       align-items: center;
       .logo {
-        height: 65px;
+        width:215px;
       }
     }
   }
@@ -240,7 +244,7 @@ header {
         width: 26px;
         height: 26px;
       }
-      &.iconTwitter{
+      &.iconTwitter {
         width: 20px;
         height: 20px;
       }

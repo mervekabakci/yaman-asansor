@@ -127,15 +127,8 @@
   }
 }
 .homeBannerSlide {
-  border-radius: 20px;
   overflow: hidden;
   padding-bottom: 0;
-  .sliderWrapper {
-    height: 650px;
-    @media screen and (max-width: 1600px) {
-      height: 550px;
-    }
-  }
   .singleSlide {
     height: 100%;
   }

@@ -1,11 +1,11 @@
 .homeBanner {
   position: relative;
+  height: 100vh;
   .bannerImage {
-    border-radius: 20px;
     overflow: hidden;
     height: 100%;
     width: 100%;
-    img{
+    img {
       object-fit: cover;
       min-width: 100%;
       min-height: 100%;
@@ -26,21 +26,26 @@
     padding: 80px 160px;
     background-color: rgba(0, 0, 0, 0.35);
     .bannerTitle {
-      font-size: 65px;
+      font-family: "Roboto Condensed", sans-serif;
+      font-size: 85px;
       color: var(--white);
-      line-height: 75px;
+      line-height: 95px;
       font-weight: 700;
       @media screen and (max-width: 1600px) {
         font-size: 55px;
         line-height: 65px;
+      }
+      b {
+        color: var(--secondary);
       }
     }
     p {
       font-family: "Inter", sans-serif;
       font-weight: 500;
       font-size: 25px;
-      line-height: 45px;
+      line-height: 32px;
       color: var(--white);
+      margin-top: 15px;
       flex: none;
       @media screen and (max-width: 1600px) {
         font-size: 20px;
@@ -54,7 +59,7 @@
   align-items: center;
   height: 550px;
   .bannerDesc {
-    padding-left:145px;
+    padding-left: 145px;
     padding-right: 60px;
     .category {
       font-family: "Inter", sans-serif;
@@ -63,13 +68,13 @@
       font-weight: 500;
       text-transform: uppercase;
     }
-    .bannerTitle{
+    .bannerTitle {
       font-size: 40px;
       line-height: 50px;
       color: var(--primary);
       font-weight: 700;
     }
-    p{
+    p {
       font-size: 18px;
       line-height: 32px;
       font-family: "Inter", sans-serif;
@@ -82,10 +87,10 @@
     min-width: 45%;
     height: 100%;
   }
-  &.md{
+  &.md {
     height: 360px;
-    .bannerDesc{
-      p{
+    .bannerDesc {
+      p {
         font-size: 14px;
         line-height: 22px;
       }

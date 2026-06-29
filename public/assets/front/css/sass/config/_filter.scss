@@ -1,8 +1,10 @@
 @use "sass:map";
 
 $filters: (
-  "primary":  invert(9%) sepia(66%) saturate(1818%) hue-rotate(188deg) brightness(93%) contrast(97%),
+  "primary":  brightness(0) saturate(100%) invert(18%) sepia(8%) saturate(347%) hue-rotate(188deg) brightness(95%) contrast(89%),
   "secondary": invert(24%) sepia(88%) saturate(2786%) hue-rotate(343deg) brightness(90%) contrast(91%),
+  "tertiary":brightness(0) saturate(100%) invert(58%) sepia(7%) saturate(186%) hue-rotate(173deg) brightness(93%) contrast(87%),
+  "fourth":brightness(0) saturate(100%) invert(92%) sepia(7%) saturate(112%) hue-rotate(183deg) brightness(94%) contrast(94%),
   "red": invert(16%) sepia(99%) saturate(7482%) hue-rotate(0deg) brightness(101%) contrast(118%),
   "white": invert(1) brightness(1),
   "gray": invert(65%),
